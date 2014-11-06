@@ -11,9 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\src\GameWindow.cpp" />
     <ClCompile Include="..\..\..\src\Nytram.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\src\GameWindow.h" />
     <ClInclude Include="..\..\..\src\Nytram.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

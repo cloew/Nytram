@@ -1,5 +1,7 @@
 #pragma once
 
+#include "GameWindow.h"
+
 #define NYTRAM_API __declspec(dllexport)
 
 #if __cplusplus
