@@ -15,7 +15,13 @@ void Nytram_Stop()
 	loop.stop();
 }
 
+// Window
+void Window_SetTitle(const char* title)
+{
+	gameWindow.setTitle(title);
+}
+
 void Window_SetSize(int width, int height)
 {
-	gameWindow.setWindowSize(width, height);
+	gameWindow.setSize(width, height);
 }

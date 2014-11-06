@@ -13,6 +13,7 @@ extern "C" {
 	NYTRAM_API void Nytram_Stop();
 
 	// Window
+	NYTRAM_API void Window_SetTitle(const char* title);
 	NYTRAM_API void Window_SetSize(int width, int height);
 	
 #if __cplusplus

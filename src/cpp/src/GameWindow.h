@@ -15,7 +15,8 @@ public:
 	void quit();
 
 	// Setters
-	void setWindowSize(int newWidth, int newHeight);
+	void setTitle(const char* title);
+	void setSize(int newWidth, int newHeight);
 
 private:
 	HWND windowHandle;

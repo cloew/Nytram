@@ -139,7 +139,12 @@ void GameWindow::quit()
     PostQuitMessage(0);
 }
 
-void GameWindow::setWindowSize(int newWidth, int newHeight)
+void GameWindow::setTitle(const char* newTitle)
+{
+	title = newTitle;
+}
+
+void GameWindow::setSize(int newWidth, int newHeight)
 {
     width = newWidth;
 	height = newHeight;

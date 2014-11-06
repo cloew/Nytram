@@ -5,7 +5,7 @@ import sys
 
 def main(args):
     """ Run the main file """
-    window = Window(width=600, height=100)
+    window = Window(width=600, height=100, title="Test Application")
     print Application(window=window).run()
 
 if __name__ == "__main__":
