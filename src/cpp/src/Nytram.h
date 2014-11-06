@@ -2,6 +2,7 @@
 
 #include "GameLoop.h"
 #include "GameWindow.h"
+#include "Mouse.h"
 
 #define NYTRAM_API __declspec(dllexport)
 
@@ -11,6 +12,9 @@ extern "C" {
 
 	NYTRAM_API int Nytram_Run();
 	NYTRAM_API void Nytram_Stop();
+
+	// Mouse
+	NYTRAM_API void Mouse_SetButtonCallback(MouseButton_Callback callback);
 
 	// Window
 	NYTRAM_API void Window_SetTitle(const char* title);

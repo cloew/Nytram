@@ -1,15 +1,19 @@
 #pragma once
 
 #include <windows.h>
-#include <iostream>
+
+#include "Mouse.h"
 
 class MouseListener
 {
 public:
-	MouseListener(void);
-	~MouseListener(void);
+	MouseListener() {}
+	MouseListener(Mouse* mouseHandler);
 
 	void onButtonPressed(UINT uMsg, WPARAM wParam);
 	int getXButtonNumber(WPARAM wParam);
+
+private:
+	Mouse* mouse;
 };
 

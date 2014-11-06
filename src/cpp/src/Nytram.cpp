@@ -1,6 +1,7 @@
 #include "Nytram.h"
 
-GameWindow gameWindow;
+Mouse mouse;
+GameWindow gameWindow(&mouse);
 GameLoop loop(&gameWindow);
 
 int Nytram_Run()
@@ -13,6 +14,12 @@ int Nytram_Run()
 void Nytram_Stop()
 {
 	loop.stop();
+}
+
+// Mouse
+void Mouse_SetButtonCallback(MouseButton_Callback callback)
+{
+	mouse.setButtonCallback(callback);
 }
 
 // Window

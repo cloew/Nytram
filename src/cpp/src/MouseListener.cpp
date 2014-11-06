@@ -1,13 +1,8 @@
 #include "MouseListener.h"
 
-
-MouseListener::MouseListener(void)
+MouseListener::MouseListener(Mouse* mouseHandler)
 {
-}
-
-
-MouseListener::~MouseListener(void)
-{
+	mouse = mouseHandler;
 }
 
 void MouseListener::onButtonPressed(UINT uMsg, WPARAM wParam)
@@ -49,6 +44,8 @@ void MouseListener::onButtonPressed(UINT uMsg, WPARAM wParam)
         pressed = false;
         break;
     }
+
+	mouse->setButtonPressed(button, pressed);
 }
 
 int MouseListener::getXButtonNumber(WPARAM wParam)

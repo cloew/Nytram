@@ -67,7 +67,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     return 1; 
 }
 
-GameWindow::GameWindow()
+GameWindow::GameWindow(Mouse* mouseHandler)
 {
 	width = 640;
 	height = 480;
@@ -75,6 +75,8 @@ GameWindow::GameWindow()
 	title = "Nytram Window";
 	MSG othermsg = { 0 };
 	msg = othermsg;
+
+	mouseListener = MouseListener(mouseHandler);
 }
 
 int GameWindow::open()
