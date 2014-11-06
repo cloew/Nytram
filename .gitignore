@@ -34,6 +34,14 @@ __pycache__/
 # C extensions
 *.so
 
+# VS Studio
+*.filters
+*.opensdf
+*.sdf
+*.suo
+Debug
+Release
+
 # Distribution / packaging
 .Python
 env/
