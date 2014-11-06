@@ -10,6 +10,7 @@ extern "C" {
 #endif
 
 	NYTRAM_API int Nytram_Run();
+	NYTRAM_API int Nytram_Run();
 	
 #if __cplusplus
 }

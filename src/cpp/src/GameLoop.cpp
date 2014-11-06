@@ -50,3 +50,8 @@ void GameLoop::run()
         }
     }
 }
+
+void GameLoop::stop()
+{
+	gameWindow.quit();
+}

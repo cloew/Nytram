@@ -12,6 +12,7 @@ public:
 
 	int open();
 	bool update();
+	void quit();
 
 private:
 	HWND windowHandle;

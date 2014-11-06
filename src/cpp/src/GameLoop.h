@@ -12,6 +12,7 @@ public:
 	~GameLoop();
 
 	void run();
+	void stop();
 
 private:
 	GameWindow gameWindow;

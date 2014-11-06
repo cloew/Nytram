@@ -133,3 +133,8 @@ bool GameWindow::update()
     }
 	return false;
 }
+
+void GameWindow::quit()
+{
+    PostQuitMessage(0);
+}

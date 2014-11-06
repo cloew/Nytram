@@ -1,11 +1,16 @@
 #include "Nytram.h"
 
-NYTRAM_API int Nytram_Run()
-{
-	GameWindow gameWindow;
-	GameLoop loop(gameWindow);
+GameWindow gameWindow;
+GameLoop loop(gameWindow);
 
+int Nytram_Run()
+{
 	loop.run();
 
 	return 0;
+}
+
+void Nytram_Stop()
+{
+	loop.stop();
 }
