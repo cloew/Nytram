@@ -13,11 +13,13 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\src\GameLoop.cpp" />
     <ClCompile Include="..\..\..\src\GameWindow.cpp" />
+    <ClCompile Include="..\..\..\src\MouseListener.cpp" />
     <ClCompile Include="..\..\..\src\Nytram.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\GameLoop.h" />
     <ClInclude Include="..\..\..\src\GameWindow.h" />
+    <ClInclude Include="..\..\..\src\MouseListener.h" />
     <ClInclude Include="..\..\..\src\Nytram.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

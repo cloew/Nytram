@@ -1,5 +1,7 @@
 #include "GameWindow.h"
 
+MouseListener* g_mouseListener;
+
 DWORD GetWindowStyle()
 {
     int style = WS_OVERLAPPEDWINDOW;
@@ -40,9 +42,13 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     case WM_LBUTTONDOWN:
     case WM_MBUTTONDOWN:
     case WM_RBUTTONDOWN:
+	case WM_XBUTTONDOWN:
     case WM_LBUTTONUP:
     case WM_MBUTTONUP:
     case WM_RBUTTONUP:
+    case WM_XBUTTONUP:
+        //Mouse_SetMousePosition((float)LOWORD(lParam), (float)HIWORD(lParam));
+        g_mouseListener->onButtonPressed(uMsg, wParam);
         return 0;
 
     case WM_MOUSEMOVE:
@@ -109,7 +115,10 @@ int GameWindow::open()
 
     if (!windowHandle)
         return -1;
+	
+	g_mouseListener = &mouseListener;
 	ShowWindow(windowHandle, TRUE);
+
 	return 0;
 }
 

@@ -3,6 +3,8 @@
 #include <windows.h>
 #include <string>
 
+#include "MouseListener.h"
+
 using namespace std;
 
 class GameWindow
@@ -25,4 +27,7 @@ private:
 	LPCTSTR windowClass;
 	string title;
 	MSG msg;
+
+	// Event Listeners
+	MouseListener mouseListener;
 };
