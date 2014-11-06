@@ -1,7 +1,7 @@
 #include "Nytram.h"
 
 GameWindow gameWindow;
-GameLoop loop(gameWindow);
+GameLoop loop(&gameWindow);
 
 int Nytram_Run()
 {
@@ -13,4 +13,9 @@ int Nytram_Run()
 void Nytram_Stop()
 {
 	loop.stop();
+}
+
+void Window_SetSize(int width, int height)
+{
+	gameWindow.setWindowSize(width, height);
 }

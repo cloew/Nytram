@@ -138,3 +138,9 @@ void GameWindow::quit()
 {
     PostQuitMessage(0);
 }
+
+void GameWindow::setWindowSize(int newWidth, int newHeight)
+{
+    width = newWidth;
+	height = newHeight;
+}

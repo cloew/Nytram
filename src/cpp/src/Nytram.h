@@ -11,6 +11,9 @@ extern "C" {
 
 	NYTRAM_API int Nytram_Run();
 	NYTRAM_API void Nytram_Stop();
+
+	// Window
+	NYTRAM_API void Window_SetSize(int width, int height);
 	
 #if __cplusplus
 }

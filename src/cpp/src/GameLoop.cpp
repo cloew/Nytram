@@ -14,7 +14,7 @@ long long milliseconds_now()
     }
 }
 
-GameLoop::GameLoop(GameWindow window)
+GameLoop::GameLoop(GameWindow* window)
 {
 	gameWindow = window;
 	clockSpeed = 60.0f;
@@ -27,7 +27,7 @@ GameLoop::~GameLoop()
 
 void GameLoop::run()
 {
-	gameWindow.open();
+	gameWindow->open();
 
 	long limit = (1 / clockSpeed) * 1000;
     long previous = milliseconds_now();
@@ -38,7 +38,7 @@ void GameLoop::run()
         long deltaTime = start - previous;
         previous = start;
 
-		if (gameWindow.update())
+		if (gameWindow->update())
 			break;
 
 		long end = milliseconds_now();
@@ -53,5 +53,5 @@ void GameLoop::run()
 
 void GameLoop::stop()
 {
-	gameWindow.quit();
+	gameWindow->quit();
 }

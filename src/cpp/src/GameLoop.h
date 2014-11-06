@@ -8,14 +8,14 @@
 class GameLoop
 {
 public:
-	GameLoop(GameWindow window);
+	GameLoop(GameWindow* window);
 	~GameLoop();
 
 	void run();
 	void stop();
 
 private:
-	GameWindow gameWindow;
+	GameWindow* gameWindow;
 	float clockSpeed;
 };
 

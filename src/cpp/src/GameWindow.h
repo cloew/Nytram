@@ -14,6 +14,9 @@ public:
 	bool update();
 	void quit();
 
+	// Setters
+	void setWindowSize(int newWidth, int newHeight);
+
 private:
 	HWND windowHandle;
 	int width;
