@@ -11,6 +11,7 @@ public:
 	GameWindow();
 
 	int open();
+	bool update();
 
 private:
 	HWND windowHandle;
@@ -18,4 +19,5 @@ private:
 	int height;
 	LPCTSTR windowClass;
 	string title;
+	MSG msg;
 };

@@ -3,7 +3,9 @@
 NYTRAM_API int Nytram_Run()
 {
 	GameWindow gameWindow;
-	gameWindow.open();
+	GameLoop loop(gameWindow);
+
+	loop.run();
 
 	return 0;
 }

@@ -67,6 +67,8 @@ GameWindow::GameWindow()
 	height = 480;
 	windowClass = TEXT("NytramWnd");
 	title = "Nytram Window";
+	MSG othermsg = { 0 };
+	msg = othermsg;
 }
 
 int GameWindow::open()
@@ -109,4 +111,25 @@ int GameWindow::open()
         return -1;
 	ShowWindow(windowHandle, TRUE);
 	return 0;
+}
+
+bool GameWindow::update()
+{
+    if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE) != 0)
+    {
+        if (msg.message == WM_QUIT)
+        {
+            return true;
+        }
+        else
+        {
+            TranslateMessage(&msg); 
+            DispatchMessage(&msg); 
+        }
+    }
+    else
+    {
+        SendMessage(windowHandle, WM_PAINT, 0, 0 );
+    }
+	return false;
 }
