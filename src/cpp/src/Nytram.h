@@ -10,7 +10,7 @@
 extern "C" {
 #endif
 
-	NYTRAM_API int Nytram_Run();
+	NYTRAM_API int Nytram_Run(GameLoop_Callback callback);
 	NYTRAM_API void Nytram_Stop();
 
 	// Mouse

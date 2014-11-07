@@ -25,7 +25,7 @@ GameLoop::~GameLoop()
 {
 }
 
-void GameLoop::run()
+void GameLoop::run(GameLoop_Callback callback)
 {
 	gameWindow->open();
 
@@ -38,6 +38,7 @@ void GameLoop::run()
         long deltaTime = start - previous;
         previous = start;
 
+		callback();
 		if (gameWindow->update())
 			break;
 

@@ -4,10 +4,9 @@ Mouse mouse;
 GameWindow gameWindow(&mouse);
 GameLoop loop(&gameWindow);
 
-int Nytram_Run()
+int Nytram_Run(GameLoop_Callback callback)
 {
-	loop.run();
-
+	loop.run(callback);
 	return 0;
 }
 
