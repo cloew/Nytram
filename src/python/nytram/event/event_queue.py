@@ -33,7 +33,8 @@ class EventQueue:
     
     def on_mouse_button_pressed(self, button, pressed):
         """ Callback to be called when a mouse button is pressed """
-        if pressed:
-            print "Button: {0} was pressed".format(button)
-        else:
-            print "Button: {0} was released".format(button)
+        self.addEvent(Event(button, pressed))
+        # if pressed:
+            # print "Button: {0} was pressed".format(button)
+        # else:
+            # print "Button: {0} was released".format(button)
