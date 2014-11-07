@@ -3,6 +3,7 @@
 Keyboard::Keyboard()
 {
 	callback = NULL;
+	memset(keyStates, 0, sizeof(keyStates));
 }
 
 void Keyboard::setKeyPressed(int key, bool pressed)

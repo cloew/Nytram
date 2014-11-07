@@ -1,5 +1,5 @@
-from events import MouseButtons
-from nytram.nytram_cpp_wrapper import CPP_LIB, MouseButtonCallback, GetCallbackMethod
+from events import Keys, MouseButtons
+from nytram.nytram_cpp_wrapper import CPP_LIB, KeyboardCallback, MouseButtonCallback, GetCallbackMethod
 
 from collections import deque
 
@@ -32,14 +32,17 @@ class EventQueue:
         """ Set the Mouse Button callback """
         self.buttonCallback = GetCallbackMethod(self, MouseButtonCallback, self.on_mouse_button_pressed)
         CPP_LIB.Mouse_SetButtonCallback(self.buttonCallback)
+        
+        self.keyboardCallback = GetCallbackMethod(self, KeyboardCallback, self.on_key_pressed)
+        CPP_LIB.Keyboard_SetCallback(self.keyboardCallback)
+    
+    def on_key_pressed(self, key, pressed):
+        """ Callback to be called when a key button is pressed """
+        self.addEvent(Event(key, pressed, Keys))
     
     def on_mouse_button_pressed(self, button, pressed):
         """ Callback to be called when a mouse button is pressed """
         self.addEvent(Event(button, pressed, MouseButtons))
-        # if pressed:
-            # print "Button: {0} was pressed".format(button)
-        # else:
-            # print "Button: {0} was released".format(button)
             
     def pop(self):
         """ Return and pop the first element of the queue """
