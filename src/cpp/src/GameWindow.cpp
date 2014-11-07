@@ -1,5 +1,6 @@
 #include "GameWindow.h"
 
+KeyboardListener* g_keyboardListener;
 MouseListener* g_mouseListener;
 
 DWORD GetWindowStyle()
@@ -37,6 +38,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     case WM_SYSKEYUP:
     case WM_KEYDOWN:
     case WM_KEYUP:
+		g_keyboardListener->onKeyPressed(uMsg, wParam, lParam);
         return 0;
 
     case WM_LBUTTONDOWN:
@@ -117,7 +119,8 @@ int GameWindow::open()
 
     if (!windowHandle)
         return -1;
-	
+
+	g_keyboardListener = &keyboardListener;
 	g_mouseListener = &mouseListener;
 	ShowWindow(windowHandle, TRUE);
 

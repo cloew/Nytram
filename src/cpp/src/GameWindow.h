@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <string>
 
+#include "KeyboardListener.h"
 #include "Mouse.h"
 #include "MouseListener.h"
 
@@ -30,5 +31,6 @@ private:
 	MSG msg;
 
 	// Event Listeners
+	KeyboardListener keyboardListener;
 	MouseListener mouseListener;
 };

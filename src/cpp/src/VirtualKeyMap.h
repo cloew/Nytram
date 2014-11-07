@@ -15,6 +15,7 @@ public:
 	VirtualKeyMap();
 
 	unordered_map<UINT, int>::const_iterator find(UINT virtualKey);
+	unordered_map<UINT, int>::const_iterator end();
 
 private:
 	unordered_map<UINT, int> keyMap;

@@ -114,3 +114,8 @@ unordered_map<UINT, int>::const_iterator VirtualKeyMap::find(UINT virtualKey)
 {
 	return keyMap.find(virtualKey);
 }
+
+unordered_map<UINT, int>::const_iterator VirtualKeyMap::end()
+{
+	return keyMap.end();
+}

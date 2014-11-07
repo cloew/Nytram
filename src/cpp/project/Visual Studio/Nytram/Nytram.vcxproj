@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\src\GameLoop.cpp" />
     <ClCompile Include="..\..\..\src\GameWindow.cpp" />
+    <ClCompile Include="..\..\..\src\KeyboardListener.cpp" />
     <ClCompile Include="..\..\..\src\Mouse.cpp" />
     <ClCompile Include="..\..\..\src\MouseListener.cpp" />
     <ClCompile Include="..\..\..\src\Nytram.cpp" />
@@ -21,6 +22,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\src\GameLoop.h" />
     <ClInclude Include="..\..\..\src\GameWindow.h" />
+    <ClInclude Include="..\..\..\src\KeyboardListener.h" />
     <ClInclude Include="..\..\..\src\Keys.h" />
     <ClInclude Include="..\..\..\src\Mouse.h" />
     <ClInclude Include="..\..\..\src\MouseListener.h" />
