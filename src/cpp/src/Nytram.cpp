@@ -1,7 +1,8 @@
 #include "Nytram.h"
 
+Keyboard keyboard;
 Mouse mouse;
-GameWindow gameWindow(&mouse);
+GameWindow gameWindow(&keyboard, &mouse);
 GameLoop loop(&gameWindow);
 
 int Nytram_Run(GameLoop_Callback callback)
@@ -13,6 +14,12 @@ int Nytram_Run(GameLoop_Callback callback)
 void Nytram_Stop()
 {
 	loop.stop();
+}
+
+// Keyboard
+void Keyboard_SetCallback(Keyboard_Callback callback)
+{
+	keyboard.setCallback(callback);
 }
 
 // Mouse

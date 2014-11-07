@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <string>
 
+#include "Keyboard.h"
 #include "KeyboardListener.h"
 #include "Mouse.h"
 #include "MouseListener.h"
@@ -12,7 +13,7 @@ using namespace std;
 class GameWindow
 {
 public:
-	GameWindow(Mouse* mouseHandler);
+	GameWindow(Keyboard* keyboardHandler, Mouse* mouseHandler);
 
 	int open();
 	bool update();
