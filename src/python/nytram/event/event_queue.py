@@ -1,4 +1,4 @@
-from nytram_cpp_wrapper import CPP_LIB, MouseButtonCallback
+from nytram.nytram_cpp_wrapper import CPP_LIB, MouseButtonCallback
 
 from collections import deque
 

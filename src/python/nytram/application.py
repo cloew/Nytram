@@ -1,5 +1,5 @@
 from nytram_cpp_wrapper import CPP_LIB
-from event_queue import EventQueue
+from event.event_queue import EventQueue
 from mouse import mouse
 from window import Window
 
