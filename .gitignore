@@ -41,6 +41,7 @@ __pycache__/
 *.suo
 Debug
 Release
+ipch
 
 # Distribution / packaging
 .Python
