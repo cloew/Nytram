@@ -14,7 +14,7 @@ public:
 
 	int open();
 	void processEvents();
-	bool shouldClose();
+	int shouldClose();
 	void quit();
 
 	// Setters

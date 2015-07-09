@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\FrameLimiter.cpp" />
     <ClCompile Include="..\..\src\GameLoop.cpp" />
     <ClCompile Include="..\..\src\GameWindow.cpp" />
     <ClCompile Include="..\..\src\Keyboard.cpp" />
@@ -29,6 +30,7 @@
     <ClCompile Include="..\..\src\VirtualKeyMap.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\FrameLimiter.h" />
     <ClInclude Include="..\..\src\GameLoop.h" />
     <ClInclude Include="..\..\src\GameWindow.h" />
     <ClInclude Include="..\..\src\Keyboard.h" />
