@@ -12,9 +12,18 @@ public:
 	void start();
 	void enforceFrameLimit();
 
+	double getCurrentFps() {return currentFps;}
+
 private:
-	float clockSpeed;
-	long limit;
+	float targetFps;
+	long targetFrameDuration;
 	long now, lastFrameStart, dt;
+
+    double currentFps;
+	long reportInterval;
+	long lastReportTime;
+    int frameCount;
+
+	inline void calculateCurrentFps(long now);
 };
 
