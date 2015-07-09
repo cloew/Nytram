@@ -13,8 +13,7 @@ public:
 	GameWindow();
 
 	int open();
-	void pollEvents();
-
+	void processEvents();
 	bool shouldClose();
 	void quit();
 

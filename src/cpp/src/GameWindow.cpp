@@ -33,7 +33,7 @@ int GameWindow::open()
 	return 0;
 }
 
-void GameWindow::pollEvents()
+void GameWindow::processEvents()
 {
     glfwPollEvents();
 }

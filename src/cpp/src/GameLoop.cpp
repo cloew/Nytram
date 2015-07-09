@@ -39,9 +39,7 @@ void GameLoop::run(GameLoop_Callback callback)
         previous = start;
 
 		callback();
-		gameWindow->pollEvents();
-		//if (gameWindow->update())
-			//break;
+		gameWindow->processEvents();
 
 		long end = milliseconds_now();
         long dt = end - start;
