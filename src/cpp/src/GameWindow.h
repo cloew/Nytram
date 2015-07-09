@@ -13,6 +13,9 @@ public:
 	GameWindow();
 
 	int open();
+	void pollEvents();
+
+	bool shouldClose();
 	void quit();
 
 	// Setters

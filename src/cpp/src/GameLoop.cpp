@@ -32,13 +32,14 @@ void GameLoop::run(GameLoop_Callback callback)
 	long limit = (1 / clockSpeed) * 1000;
     long previous = milliseconds_now();
 	
-	while (true)
+	while (!gameWindow->shouldClose())
     {
 		long start = milliseconds_now();
         long deltaTime = start - previous;
         previous = start;
 
 		callback();
+		gameWindow->pollEvents();
 		//if (gameWindow->update())
 			//break;
 
@@ -50,6 +51,7 @@ void GameLoop::run(GameLoop_Callback callback)
             std::this_thread::sleep_for(std::chrono::milliseconds(limit - dt));
         }
     }
+	glfwTerminate();
 }
 
 void GameLoop::stop()

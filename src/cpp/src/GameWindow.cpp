@@ -33,6 +33,16 @@ int GameWindow::open()
 	return 0;
 }
 
+void GameWindow::pollEvents()
+{
+    glfwPollEvents();
+}
+
+bool GameWindow::shouldClose()
+{
+	return glfwWindowShouldClose(window);
+}
+
 void GameWindow::quit()
 {
     glfwSetWindowShouldClose(window, true);
