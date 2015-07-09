@@ -17,6 +17,9 @@ public:
 	int shouldClose();
 	void quit();
 
+	// Getters
+	GLFWwindow* getGLFWWindow() {return window;}
+
 	// Setters
 	void setTitle(const char* title);
 	void setSize(int newWidth, int newHeight);

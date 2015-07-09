@@ -1,13 +1,15 @@
 #include "GameLoop.h"
 
-GameLoop::GameLoop(GameWindow* window)
+GameLoop::GameLoop(GameWindow* window, InputHandler* inputHandler)
 {
-	gameWindow = window;
+	this->gameWindow = window;
+	this->inputHandler = inputHandler;
 }
 
 void GameLoop::run(GameLoop_Callback callback)
 {
 	gameWindow->open();
+	inputHandler->bindCallbacks();
 	frameLimiter.start();
 	
 	while (!gameWindow->shouldClose())
