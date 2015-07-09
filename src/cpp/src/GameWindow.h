@@ -13,7 +13,6 @@ public:
 	GameWindow();
 
 	int open();
-	void processEvents();
 	int shouldClose();
 	void quit();
 

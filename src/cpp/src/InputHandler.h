@@ -11,6 +11,9 @@ public:
 	InputHandler(GameWindow* window);
 
 	void bindCallbacks(); // Must be called after the window has opened and created the underlying GLFW Window context
+	void processEvents();
+
+	// Setters
 	void setKeyboardCallback(Keyboard_Callback newCallback);
 	void setMouseButtonCallback(MouseButton_Callback newCallback);
 

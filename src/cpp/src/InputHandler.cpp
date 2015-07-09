@@ -30,6 +30,11 @@ void InputHandler::bindCallbacks()
 	glfwSetMouseButtonCallback(gameWindow->getGLFWWindow(), mousebutton_callback);
 }
 
+void InputHandler::processEvents()
+{
+    glfwPollEvents();
+}
+
 void InputHandler::setKeyboardCallback(Keyboard_Callback newCallback)
 {
 	keyboardCallback = newCallback;

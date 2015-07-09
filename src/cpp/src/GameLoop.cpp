@@ -15,7 +15,7 @@ void GameLoop::run(GameLoop_Callback callback)
 	while (!gameWindow->shouldClose())
     {
 		callback();
-		gameWindow->processEvents();
+		inputHandler->processEvents();
 		frameLimiter.enforceFrameLimit();
     }
 	glfwTerminate();
