@@ -39,8 +39,8 @@ void GameLoop::run(GameLoop_Callback callback)
         previous = start;
 
 		callback();
-		if (gameWindow->update())
-			break;
+		//if (gameWindow->update())
+			//break;
 
 		long end = milliseconds_now();
         long dt = end - start;

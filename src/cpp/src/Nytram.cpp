@@ -2,7 +2,7 @@
 
 Keyboard keyboard;
 Mouse mouse;
-GameWindow gameWindow(&keyboard, &mouse);
+GameWindow gameWindow;
 GameLoop loop(&gameWindow);
 
 int Nytram_Run(GameLoop_Callback callback)
