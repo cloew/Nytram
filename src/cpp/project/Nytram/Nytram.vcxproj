@@ -11,25 +11,25 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\src\GameLoop.cpp" />
-    <ClCompile Include="..\..\..\src\GameWindow.cpp" />
-    <ClCompile Include="..\..\..\src\Keyboard.cpp" />
-    <ClCompile Include="..\..\..\src\KeyboardListener.cpp" />
-    <ClCompile Include="..\..\..\src\Mouse.cpp" />
-    <ClCompile Include="..\..\..\src\MouseListener.cpp" />
-    <ClCompile Include="..\..\..\src\Nytram.cpp" />
-    <ClCompile Include="..\..\..\src\VirtualKeyMap.cpp" />
+    <ClCompile Include="..\..\src\GameLoop.cpp" />
+    <ClCompile Include="..\..\src\GameWindow.cpp" />
+    <ClCompile Include="..\..\src\Keyboard.cpp" />
+    <ClCompile Include="..\..\src\KeyboardListener.cpp" />
+    <ClCompile Include="..\..\src\Mouse.cpp" />
+    <ClCompile Include="..\..\src\MouseListener.cpp" />
+    <ClCompile Include="..\..\src\Nytram.cpp" />
+    <ClCompile Include="..\..\src\VirtualKeyMap.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\src\GameLoop.h" />
-    <ClInclude Include="..\..\..\src\GameWindow.h" />
-    <ClInclude Include="..\..\..\src\Keyboard.h" />
-    <ClInclude Include="..\..\..\src\KeyboardListener.h" />
-    <ClInclude Include="..\..\..\src\Keys.h" />
-    <ClInclude Include="..\..\..\src\Mouse.h" />
-    <ClInclude Include="..\..\..\src\MouseListener.h" />
-    <ClInclude Include="..\..\..\src\Nytram.h" />
-    <ClInclude Include="..\..\..\src\VirtualKeyMap.h" />
+    <ClInclude Include="..\..\src\GameLoop.h" />
+    <ClInclude Include="..\..\src\GameWindow.h" />
+    <ClInclude Include="..\..\src\Keyboard.h" />
+    <ClInclude Include="..\..\src\KeyboardListener.h" />
+    <ClInclude Include="..\..\src\Keys.h" />
+    <ClInclude Include="..\..\src\Mouse.h" />
+    <ClInclude Include="..\..\src\MouseListener.h" />
+    <ClInclude Include="..\..\src\Nytram.h" />
+    <ClInclude Include="..\..\src\VirtualKeyMap.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{62F91776-203E-4980-A8B7-69B3E13EF7AC}</ProjectGuid>
