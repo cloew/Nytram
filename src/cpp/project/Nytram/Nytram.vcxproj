@@ -23,25 +23,18 @@
     <ClCompile Include="..\..\src\GameLoop.cpp" />
     <ClCompile Include="..\..\src\GameWindow.cpp" />
     <ClCompile Include="..\..\src\InputHandler.cpp" />
-    <ClCompile Include="..\..\src\Keyboard.cpp" />
-    <ClCompile Include="..\..\src\KeyboardListener.cpp" />
     <ClCompile Include="..\..\src\Mouse.cpp" />
     <ClCompile Include="..\..\src\MouseListener.cpp" />
     <ClCompile Include="..\..\src\Nytram.cpp" />
-    <ClCompile Include="..\..\src\VirtualKeyMap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\FrameLimiter.h" />
     <ClInclude Include="..\..\src\GameLoop.h" />
     <ClInclude Include="..\..\src\GameWindow.h" />
     <ClInclude Include="..\..\src\InputHandler.h" />
-    <ClInclude Include="..\..\src\Keyboard.h" />
-    <ClInclude Include="..\..\src\KeyboardListener.h" />
-    <ClInclude Include="..\..\src\Keys.h" />
     <ClInclude Include="..\..\src\Mouse.h" />
     <ClInclude Include="..\..\src\MouseListener.h" />
     <ClInclude Include="..\..\src\Nytram.h" />
-    <ClInclude Include="..\..\src\VirtualKeyMap.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\lib\glfw-3.0.3\build\GLFW_303.vcxproj">
