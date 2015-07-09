@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 
-#include <glfw3.h>
+#include "glfw3.h"
 
 using namespace std;
 
@@ -13,6 +13,7 @@ public:
 	GameWindow();
 
 	int open();
+	void swapBuffers();
 	int shouldClose();
 	void quit();
 

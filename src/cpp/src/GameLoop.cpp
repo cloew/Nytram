@@ -15,6 +15,7 @@ void GameLoop::run(GameLoop_Callback callback)
 	while (!gameWindow->shouldClose())
     {
 		callback();
+		gameWindow->swapBuffers();
 		inputHandler->processEvents();
 		frameLimiter.enforceFrameLimit();
     }

@@ -33,6 +33,11 @@ int GameWindow::open()
 	return 0;
 }
 
+void GameWindow::swapBuffers()
+{
+	glfwSwapBuffers(window);
+}
+
 int GameWindow::shouldClose()
 {
 	return glfwWindowShouldClose(window);
