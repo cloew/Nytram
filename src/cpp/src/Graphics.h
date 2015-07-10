@@ -2,6 +2,8 @@
 
 #include "IncludeGL.h"
 
+#include "Shaders/Shader.h"
+
 #include <iostream>
 using namespace std;
 
