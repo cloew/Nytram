@@ -14,3 +14,8 @@ ShaderProgram::~ShaderProgram()
 {
 	glDeleteProgram(programId);
 }
+
+void ShaderProgram::use()
+{
+	glUseProgram(programId);
+}

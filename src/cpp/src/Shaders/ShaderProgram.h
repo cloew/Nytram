@@ -13,6 +13,8 @@ public:
 	ShaderProgram(vector<Shader*> shaders);
 	~ShaderProgram();
 
+	void use();
+
 private:
 	GLuint programId;
 };
