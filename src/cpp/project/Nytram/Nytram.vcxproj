@@ -33,6 +33,9 @@
     <ClInclude Include="..\..\src\Nytram.h" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\lib\glew-1.9.0\build\GLEW_190.vcxproj">
+      <Project>{a200b7d3-8cfd-44cf-8bf1-cb7d5374bd43}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\lib\glfw-3.0.3\build\GLFW_303.vcxproj">
       <Project>{5d27c79d-fd03-4c89-8738-8ec82c507517}</Project>
     </ProjectReference>
@@ -101,7 +104,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../../../../lib/glfw-3.0.3/include/GLFW;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../../lib/glew-1.9.0/include/;../../../../lib/glfw-3.0.3/include/GLFW;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
