@@ -24,6 +24,7 @@
     <ClCompile Include="..\..\src\GameWindow.cpp" />
     <ClCompile Include="..\..\src\Graphics.cpp" />
     <ClCompile Include="..\..\src\Graphics\GLBuffer.cpp" />
+    <ClCompile Include="..\..\src\Graphics\GLVertexArray.cpp" />
     <ClCompile Include="..\..\src\InputHandler.cpp" />
     <ClCompile Include="..\..\src\Nytram.cpp" />
     <ClCompile Include="..\..\src\Shaders\Shader.cpp" />
@@ -35,6 +36,7 @@
     <ClInclude Include="..\..\src\GameWindow.h" />
     <ClInclude Include="..\..\src\Graphics.h" />
     <ClInclude Include="..\..\src\Graphics\GLBuffer.h" />
+    <ClInclude Include="..\..\src\Graphics\GLVertexArray.h" />
     <ClInclude Include="..\..\src\IncludeGL.h" />
     <ClInclude Include="..\..\src\InputHandler.h" />
     <ClInclude Include="..\..\src\Nytram.h" />
