@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 
-#include "glfw3.h"
+#include "IncludeGL.h"
 
 using namespace std;
 

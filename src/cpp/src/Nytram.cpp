@@ -1,8 +1,9 @@
 #include "Nytram.h"
 
 GameWindow gameWindow;
+Graphics graphics;
 InputHandler inputHandler(&gameWindow);
-GameLoop loop(&gameWindow, &inputHandler);
+GameLoop loop(&gameWindow, &graphics, &inputHandler);
 
 int Nytram_Run(GameLoop_Callback callback)
 {

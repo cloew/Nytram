@@ -2,6 +2,7 @@
 
 #include "GameLoop.h"
 #include "GameWindow.h"
+#include "Graphics.h"
 #include "InputHandler.h"
 
 #define NYTRAM_API __declspec(dllexport)
