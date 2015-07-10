@@ -17,6 +17,7 @@ public:
 
 	void use();
 	VertexAttribute* getAttribute(GLuint index);
+	void setUniformValue(const char* name, GLfloat x, GLfloat y, GLfloat z);
 
 private:
 	GLuint programId;

@@ -30,3 +30,9 @@ VertexAttribute* ShaderProgram::getAttribute(GLuint index)
 
 	return &indexToAttribute[index];
 }
+
+void ShaderProgram::setUniformValue(const char* name, GLfloat x, GLfloat y, GLfloat z)
+{
+	GLint uniformId = glGetUniformLocation(programId, name);
+	glUniform3f(uniformId, x, y, z);
+}
