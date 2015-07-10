@@ -23,6 +23,7 @@
     <ClCompile Include="..\..\src\GameLoop.cpp" />
     <ClCompile Include="..\..\src\GameWindow.cpp" />
     <ClCompile Include="..\..\src\Graphics.cpp" />
+    <ClCompile Include="..\..\src\Graphics\GLBuffer.cpp" />
     <ClCompile Include="..\..\src\InputHandler.cpp" />
     <ClCompile Include="..\..\src\Nytram.cpp" />
     <ClCompile Include="..\..\src\Shaders\Shader.cpp" />
@@ -33,6 +34,7 @@
     <ClInclude Include="..\..\src\GameLoop.h" />
     <ClInclude Include="..\..\src\GameWindow.h" />
     <ClInclude Include="..\..\src\Graphics.h" />
+    <ClInclude Include="..\..\src\Graphics\GLBuffer.h" />
     <ClInclude Include="..\..\src\IncludeGL.h" />
     <ClInclude Include="..\..\src\InputHandler.h" />
     <ClInclude Include="..\..\src\Nytram.h" />
@@ -46,6 +48,10 @@
     <ProjectReference Include="..\..\..\..\lib\glfw-3.0.3\build\GLFW_303.vcxproj">
       <Project>{5d27c79d-fd03-4c89-8738-8ec82c507517}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\resources\basic.frag" />
+    <None Include="..\..\resources\basic.vert" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{62F91776-203E-4980-A8B7-69B3E13EF7AC}</ProjectGuid>
