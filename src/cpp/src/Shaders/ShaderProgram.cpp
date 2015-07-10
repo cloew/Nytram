@@ -19,3 +19,14 @@ void ShaderProgram::use()
 {
 	glUseProgram(programId);
 }
+
+VertexAttribute* ShaderProgram::getAttribute(GLuint index)
+{
+	if (indexToAttribute.find(index) == indexToAttribute.end())
+	{
+		VertexAttribute newAttribute(index);
+		indexToAttribute[index] = newAttribute;
+	}
+
+	return &indexToAttribute[index];
+}

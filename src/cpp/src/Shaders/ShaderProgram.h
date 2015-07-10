@@ -2,7 +2,9 @@
 
 #include "IncludeGL.h"
 #include "Shader.h"
+#include "VertexAttribute.h"
 
+#include <map>
 #include <vector>
 
 using namespace std;
@@ -14,7 +16,9 @@ public:
 	~ShaderProgram();
 
 	void use();
+	VertexAttribute* getAttribute(GLuint index);
 
 private:
 	GLuint programId;
+	map<GLuint, VertexAttribute> indexToAttribute;
 };

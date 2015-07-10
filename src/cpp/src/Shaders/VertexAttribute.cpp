@@ -1,5 +1,9 @@
 #include "VertexAttribute.h"
 
+VertexAttribute::VertexAttribute()
+{
+	index = 0;
+}
 
 VertexAttribute::VertexAttribute(GLuint index)
 {
