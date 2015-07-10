@@ -11,7 +11,8 @@ class GLBuffer
 public:
 	GLBuffer(GLenum target);
 	~GLBuffer();
-
+	
+	void makeCurrent();
 	void setData(GLsizeiptr size, const GLvoid* data, GLenum usage); // Note: This will cause this buffer to become the current buffer for its target
 
 	// Getters

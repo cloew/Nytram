@@ -11,8 +11,13 @@ GLBuffer::~GLBuffer()
 	glDeleteBuffers(1, &bufferId);
 }
 
-void GLBuffer::setData(GLsizeiptr size, const GLvoid* data, GLenum usage)
+void GLBuffer::makeCurrent()
 {
 	glBindBuffer(target, bufferId);
+}
+
+void GLBuffer::setData(GLsizeiptr size, const GLvoid* data, GLenum usage)
+{
+	makeCurrent();
 	glBufferData(target, size, data, usage);
 }
