@@ -13,8 +13,9 @@ class Shader
 {
 public:
 	Shader(const char* filePath, GLenum shaderType);
+	~Shader();
 
-	void del();
+	GLuint getShaderId() {return shaderId;}
 
 private:
 	GLuint shaderId;

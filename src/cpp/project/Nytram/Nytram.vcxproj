@@ -26,6 +26,7 @@
     <ClCompile Include="..\..\src\InputHandler.cpp" />
     <ClCompile Include="..\..\src\Nytram.cpp" />
     <ClCompile Include="..\..\src\Shaders\Shader.cpp" />
+    <ClCompile Include="..\..\src\Shaders\ShaderProgram.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\FrameLimiter.h" />
@@ -36,6 +37,7 @@
     <ClInclude Include="..\..\src\InputHandler.h" />
     <ClInclude Include="..\..\src\Nytram.h" />
     <ClInclude Include="..\..\src\Shaders\Shader.h" />
+    <ClInclude Include="..\..\src\Shaders\ShaderProgram.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\lib\glew-1.9.0\build\GLEW_190.vcxproj">

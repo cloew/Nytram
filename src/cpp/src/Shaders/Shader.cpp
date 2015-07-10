@@ -13,7 +13,7 @@ Shader::Shader(const char* filePath, GLenum shaderType)
 	checkCompileErrors();
 }
 
-void Shader::del()
+Shader::~Shader()
 {
 	glDeleteShader(shaderId);
 }
