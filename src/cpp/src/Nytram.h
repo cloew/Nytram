@@ -1,9 +1,6 @@
 #pragma once
 
-#include "GameLoop.h"
-#include "GameWindow.h"
-#include "Graphics.h"
-#include "InputHandler.h"
+#include "GameEngine.h"
 
 #define NYTRAM_API __declspec(dllexport)
 
@@ -11,7 +8,7 @@
 extern "C" {
 #endif
 
-	NYTRAM_API int Nytram_Run(GameLoop_Callback callback);
+	NYTRAM_API void Nytram_Run(GameLoop_Callback callback);
 	NYTRAM_API void Nytram_Stop();
 
 	// Keyboard

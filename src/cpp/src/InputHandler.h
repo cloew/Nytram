@@ -8,6 +8,7 @@ typedef void (*MouseButton_Callback)(int button, bool pressed);
 class InputHandler
 {
 public:
+	InputHandler() {}
 	InputHandler(GameWindow* window);
 
 	void bindCallbacks(); // Must be called after the window has opened and created the underlying GLFW Window context

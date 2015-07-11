@@ -10,6 +10,7 @@ typedef void (*GameLoop_Callback)();
 class GameLoop
 {
 public:
+	GameLoop() {}
 	GameLoop(GameWindow* window, Graphics* graphics, InputHandler* inputHandler);
 
 	void run(GameLoop_Callback callback);

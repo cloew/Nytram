@@ -9,9 +9,6 @@ GameLoop::GameLoop(GameWindow* window, Graphics* graphics, InputHandler* inputHa
 
 void GameLoop::run(GameLoop_Callback callback)
 {
-	gameWindow->open();
-	graphics->initialize();
-	inputHandler->bindCallbacks();
 	frameLimiter.start();
 	
 	while (!gameWindow->shouldClose())

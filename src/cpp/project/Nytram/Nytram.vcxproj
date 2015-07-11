@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\FrameLimiter.cpp" />
+    <ClCompile Include="..\..\src\GameEngine.cpp" />
     <ClCompile Include="..\..\src\GameLoop.cpp" />
     <ClCompile Include="..\..\src\GameWindow.cpp" />
     <ClCompile Include="..\..\src\Graphics.cpp" />
@@ -28,11 +29,13 @@
     <ClCompile Include="..\..\src\InputHandler.cpp" />
     <ClCompile Include="..\..\src\Nytram.cpp" />
     <ClCompile Include="..\..\src\Shaders\Shader.cpp" />
+    <ClCompile Include="..\..\src\Shaders\ShaderManager.cpp" />
     <ClCompile Include="..\..\src\Shaders\ShaderProgram.cpp" />
     <ClCompile Include="..\..\src\Shaders\VertexAttribute.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\FrameLimiter.h" />
+    <ClInclude Include="..\..\src\GameEngine.h" />
     <ClInclude Include="..\..\src\GameLoop.h" />
     <ClInclude Include="..\..\src\GameWindow.h" />
     <ClInclude Include="..\..\src\Graphics.h" />
@@ -42,6 +45,7 @@
     <ClInclude Include="..\..\src\InputHandler.h" />
     <ClInclude Include="..\..\src\Nytram.h" />
     <ClInclude Include="..\..\src\Shaders\Shader.h" />
+    <ClInclude Include="..\..\src\Shaders\ShaderManager.h" />
     <ClInclude Include="..\..\src\Shaders\ShaderProgram.h" />
     <ClInclude Include="..\..\src\Shaders\VertexAttribute.h" />
   </ItemGroup>

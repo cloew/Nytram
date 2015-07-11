@@ -1,40 +1,36 @@
 #include "Nytram.h"
 
-GameWindow gameWindow;
-Graphics graphics;
-InputHandler inputHandler(&gameWindow);
-GameLoop loop(&gameWindow, &graphics, &inputHandler);
+GameEngine engine;
 
-int Nytram_Run(GameLoop_Callback callback)
+void Nytram_Run(GameLoop_Callback callback)
 {
-	loop.run(callback);
-	return 0;
+	engine.run(callback);
 }
 
 void Nytram_Stop()
 {
-	loop.stop();
+	engine.stop();
 }
 
 // Keyboard
 void Keyboard_SetCallback(Keyboard_Callback callback)
 {
-	inputHandler.setKeyboardCallback(callback);
+	engine.setKeyboardCallback(callback);
 }
 
 // Mouse
 void Mouse_SetButtonCallback(MouseButton_Callback callback)
 {
-	inputHandler.setMouseButtonCallback(callback);
+	engine.setMouseButtonCallback(callback);
 }
 
 // Window
 void Window_SetTitle(const char* title)
 {
-	gameWindow.setTitle(title);
+	engine.setWindowTitle(title);
 }
 
 void Window_SetSize(int width, int height)
 {
-	gameWindow.setSize(width, height);
+	engine.setWindowSize(width, height);
 }
