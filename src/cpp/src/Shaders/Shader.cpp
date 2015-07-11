@@ -2,6 +2,21 @@
 
 Shader::Shader(const char* filePath, GLenum shaderType)
 {
+	shaderId = NULL;
+	this->filePath = filePath;
+	this->shaderType = shaderType;
+}
+
+Shader::~Shader()
+{
+	if (shaderId != NULL)
+	{
+		glDeleteShader(shaderId);
+	}
+}
+
+void Shader::compile()
+{
 	shaderId = glCreateShader(shaderType);
 
 	string shaderCode;
@@ -11,11 +26,6 @@ Shader::Shader(const char* filePath, GLenum shaderType)
 	compile(sourcePointer);
 	
 	checkCompileErrors();
-}
-
-Shader::~Shader()
-{
-	glDeleteShader(shaderId);
 }
 
 void Shader::loadShaderCode(const char* filePath, string& shaderCode)
