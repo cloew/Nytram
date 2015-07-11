@@ -4,6 +4,7 @@
 #include "GameWindow.h"
 #include "Graphics.h"
 #include "InputHandler.h"
+#include "Shaders/ShaderManager.h"
 
 class GameEngine
 {
@@ -18,6 +19,9 @@ public:
 	void setKeyboardCallback(Keyboard_Callback callback) {inputHandler.setKeyboardCallback(callback);}
 	void setMouseButtonCallback(MouseButton_Callback callback) {inputHandler.setMouseButtonCallback(callback);}
 
+	// Shaders
+	void addShader(GLuint id, const char* filePath, GLenum shaderType) {shaderManager.addShader(id, filePath, shaderType);}
+
 	// Window
 	void setWindowTitle(const char* title) {gameWindow.setTitle(title);}
 	void setWindowSize(int width, int height) {gameWindow.setSize(width, height);}
@@ -27,4 +31,5 @@ private:
 	Graphics graphics;
 	InputHandler inputHandler;
 	GameLoop loop;
+	ShaderManager shaderManager;
 };

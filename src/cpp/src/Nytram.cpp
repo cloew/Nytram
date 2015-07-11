@@ -24,6 +24,12 @@ void Mouse_SetButtonCallback(MouseButton_Callback callback)
 	engine.setMouseButtonCallback(callback);
 }
 
+// Shaders
+void Shader_AddShader(GLuint id, const char* filePath, GLenum shaderType)
+{
+	engine.addShader(id, filePath, shaderType);
+}
+
 // Window
 void Window_SetTitle(const char* title)
 {

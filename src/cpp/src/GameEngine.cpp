@@ -12,6 +12,8 @@ void GameEngine::run(GameLoop_Callback callback)
 	graphics.initialize();
 	inputHandler.bindCallbacks();
 
+	shaderManager.compileShaders();
+
 	loop.run(callback);
 }
 

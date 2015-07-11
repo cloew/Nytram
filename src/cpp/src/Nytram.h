@@ -17,6 +17,9 @@ extern "C" {
 	// Mouse
 	NYTRAM_API void Mouse_SetButtonCallback(MouseButton_Callback callback);
 
+	// Shaders
+	NYTRAM_API void Shader_AddShader(GLuint id, const char* filePath, GLenum shaderType);
+
 	// Window
 	NYTRAM_API void Window_SetTitle(const char* title);
 	NYTRAM_API void Window_SetSize(int width, int height);
