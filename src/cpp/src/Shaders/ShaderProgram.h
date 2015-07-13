@@ -12,6 +12,7 @@ using namespace std;
 class ShaderProgram
 {
 public:
+	ShaderProgram() {}
 	ShaderProgram(vector<Shader*> shaders);
 	~ShaderProgram();
 

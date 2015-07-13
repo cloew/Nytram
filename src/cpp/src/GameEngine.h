@@ -21,6 +21,7 @@ public:
 
 	// Shaders
 	void addShader(GLuint id, const char* filePath, GLenum shaderType) {shaderManager.addShader(id, filePath, shaderType);}
+	void addShaderProgram(GLuint id, vector<GLuint> shaderIds) {shaderManager.addProgram(id, shaderIds);}
 
 	// Window
 	void setWindowTitle(const char* title) {gameWindow.setTitle(title);}
