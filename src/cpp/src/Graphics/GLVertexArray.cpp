@@ -2,15 +2,27 @@
 
 GLVertexArray::GLVertexArray()
 {
-	glGenVertexArrays(1, &vertexArrayId);
+	vertexArrayId = NULL;
 }
 
 GLVertexArray::~GLVertexArray()
 {
-	glDeleteVertexArrays(1, &vertexArrayId);
+	if (isInitialized())
+	{
+		glDeleteVertexArrays(1, &vertexArrayId);
+	}
+}
+
+void GLVertexArray::initialize()
+{
+	glGenVertexArrays(1, &vertexArrayId);
 }
 
 void GLVertexArray::makeCurrent()
 {
+	if (!isInitialized())
+	{
+		initialize();
+	}
 	glBindVertexArray(vertexArrayId);
 }

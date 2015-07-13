@@ -13,7 +13,7 @@ void ShaderManager::addProgram(GLuint id, vector<GLuint> shaderIds)
 void ShaderManager::compileShaders()
 {
 	map<GLuint, Shader>::iterator it;
-	for (auto pair : idToShader)
+	for (auto &pair : idToShader)
     {
 		pair.second.compile();
     }
@@ -29,7 +29,7 @@ ShaderProgram* ShaderManager::getProgram(GLuint id)
 		{
 			shaders.push_back(getShader(id));
 		}
-		idToShaderProgram[id] = ShaderProgram(shaders);
+		idToShaderProgram[id].initialize(shaders);
 	}
 	return &idToShaderProgram[id];
 }

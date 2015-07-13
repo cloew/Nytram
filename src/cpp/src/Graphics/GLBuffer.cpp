@@ -2,17 +2,29 @@
 
 GLBuffer::GLBuffer(GLenum target)
 {
+	bufferId = NULL;
 	this->target = target;
-	glGenBuffers(1, &bufferId);
 }
 
 GLBuffer::~GLBuffer()
 {
-	glDeleteBuffers(1, &bufferId);
+	if (isInitialized())
+	{
+		glDeleteBuffers(1, &bufferId);
+	}
+}
+
+void GLBuffer::initialize()
+{
+	glGenBuffers(1, &bufferId);
 }
 
 void GLBuffer::makeCurrent()
 {
+	if (!isInitialized())
+	{
+		initialize();
+	}
 	glBindBuffer(target, bufferId);
 }
 

@@ -1,6 +1,14 @@
 #include "ShaderProgram.h"
 
-ShaderProgram::ShaderProgram(vector<Shader*> shaders)
+ShaderProgram::~ShaderProgram()
+{
+	if (programId != NULL)
+	{
+		glDeleteProgram(programId);
+	}
+}
+
+void ShaderProgram::initialize(vector<Shader*> shaders)
 {
 	programId = glCreateProgram();
 	for (GLuint i = 0; i < shaders.size(); i++)
@@ -8,11 +16,6 @@ ShaderProgram::ShaderProgram(vector<Shader*> shaders)
 		glAttachShader(programId, shaders[i]->getShaderId());
 	}
 	glLinkProgram(programId);
-}
-
-ShaderProgram::~ShaderProgram()
-{
-	glDeleteProgram(programId);
 }
 
 void ShaderProgram::use()

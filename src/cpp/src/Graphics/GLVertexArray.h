@@ -8,6 +8,8 @@ public:
 	GLVertexArray();
 	~GLVertexArray();
 
+	void initialize();
+	bool isInitialized() {return vertexArrayId != NULL;}
 	void makeCurrent();
 
 private:

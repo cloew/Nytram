@@ -12,10 +12,10 @@ using namespace std;
 class ShaderProgram
 {
 public:
-	ShaderProgram() {}
-	ShaderProgram(vector<Shader*> shaders);
+	ShaderProgram() {programId = NULL;}
 	~ShaderProgram();
 
+	void initialize(vector<Shader*> shaders);
 	void use();
 	VertexAttribute* getAttribute(GLuint index);
 	void setUniformValue(const char* name, GLfloat x, GLfloat y, GLfloat z);
