@@ -12,19 +12,19 @@ void Graphics::initialize()
 
 	for (auto &renderer : entityGraphics)
 	{
-		renderer.initialize(shaderManager.getProgram(1));
+		renderer.initialize();
 	}
 }
 
-GLuint Graphics::addRendererToEntity(Entity& entity)
+GLuint Graphics::addRendererToEntity(Entity& entity, GLuint shaderProgramId)
 {
-	GLuint rendererIndex = addRenderer();
+	GLuint rendererIndex = addRenderer(shaderManager.getProgram(shaderProgramId));
 	entity.setDrawCallback(entityGraphics[rendererIndex-1].getDrawCallback());
 	return rendererIndex;
 }
 
-GLuint Graphics::addRenderer()
+GLuint Graphics::addRenderer(ShaderProgram* shaderProgram)
 {
-	entityGraphics.push_back(EntityGraphic());
+	entityGraphics.push_back(EntityGraphic(shaderProgram));
 	return entityGraphics.size();
 }

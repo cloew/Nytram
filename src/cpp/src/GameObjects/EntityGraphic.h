@@ -10,7 +10,10 @@
 class EntityGraphic
 {
 public:
-	void initialize(ShaderProgram* shaderProgram);
+	EntityGraphic() {}
+	EntityGraphic(ShaderProgram* shaderProgram) {this->shaderProgram = shaderProgram;}
+
+	void initialize();
 	void draw();
 	Draw_Callback getDrawCallback() {return std::bind(&EntityGraphic::draw, this);}
 
@@ -19,4 +22,3 @@ private:
 	vector<GLBuffer> buffers;
 	ShaderProgram* shaderProgram;
 };
-

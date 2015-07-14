@@ -14,8 +14,8 @@ public:
 	void initialize(); // Must be called AFTER the GameWindow has been opened
 
 	// Renderers
-	GLuint addRendererToEntity(Entity& entity);
-	GLuint addRenderer();
+	GLuint addRendererToEntity(Entity& entity, GLuint shaderProgramId);
+	GLuint addRenderer(ShaderProgram* shaderProgram);
 
 	// Shaders
 	void addShader(GLuint id, const char* filePath, GLenum shaderType) {shaderManager.addShader(id, filePath, shaderType);}

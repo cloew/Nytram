@@ -20,7 +20,7 @@ void GameEngine::stop()
 	loop.stop();
 }
 
-GLuint GameEngine::addRendererToEntity(GLuint entityId)
+GLuint GameEngine::addRendererToEntity(GLuint entityId, GLuint shaderProgramId)
 {
-	return graphics.addRendererToEntity(scene.getEntity(entityId));
+	return graphics.addRendererToEntity(scene.getEntity(entityId), shaderProgramId);
 }

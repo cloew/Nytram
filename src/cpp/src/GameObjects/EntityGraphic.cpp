@@ -1,9 +1,7 @@
 #include "EntityGraphic.h"
 
-void EntityGraphic::initialize(ShaderProgram* shaderProgram)
+void EntityGraphic::initialize()
 {
-	this->shaderProgram = shaderProgram;
-	
 	vao.makeCurrent();
 
 	GLuint elements[] =

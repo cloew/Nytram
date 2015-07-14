@@ -12,24 +12,24 @@ void ShaderManager::addProgram(GLuint id, vector<GLuint> shaderIds)
 
 void ShaderManager::compileShaders()
 {
-	map<GLuint, Shader>::iterator it;
 	for (auto &pair : idToShader)
     {
 		pair.second.compile();
+    }
+
+	for (auto &pair : idToShaderProgram)
+    {
+		vector<Shader*> shaders;
+		vector<GLuint> shaderIds = idToProgramShaders[pair.first];
+		for (auto &id : shaderIds)
+		{
+			shaders.push_back(getShader(id));
+		}
+		pair.second.initialize(shaders);
     }
 }
 
 ShaderProgram* ShaderManager::getProgram(GLuint id)
 {
-	if (idToShaderProgram.find(id) == idToShaderProgram.end())
-	{
-		vector<Shader*> shaders;
-		vector<GLuint> shaderIds = idToProgramShaders[id];
-		for (auto &id : shaderIds)
-		{
-			shaders.push_back(getShader(id));
-		}
-		idToShaderProgram[id].initialize(shaders);
-	}
 	return &idToShaderProgram[id];
 }

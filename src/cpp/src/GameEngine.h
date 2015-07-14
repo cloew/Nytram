@@ -18,7 +18,7 @@ public:
 
 	// Entities
 	GLuint addEntity() {return scene.addEntity();}
-	GLuint addRendererToEntity(GLuint entityId);
+	GLuint addRendererToEntity(GLuint entityId, GLuint shaderProgramId);
 	
 	// Graphics
 	void addShader(GLuint id, const char* filePath, GLenum shaderType) {graphics.addShader(id, filePath, shaderType);}
