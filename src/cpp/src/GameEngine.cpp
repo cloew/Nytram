@@ -3,7 +3,7 @@
 GameEngine::GameEngine()
 {
 	inputHandler = InputHandler(&gameWindow);
-	loop = GameLoop(&gameWindow, &graphics, &inputHandler);
+	loop = GameLoop(&gameWindow, &inputHandler);
 }
 
 void GameEngine::run(GameLoop_Callback callback)
@@ -12,12 +12,15 @@ void GameEngine::run(GameLoop_Callback callback)
 	graphics.initialize();
 	inputHandler.bindCallbacks();
 
-	shaderManager.compileShaders();
-
-	loop.run(callback);
+	loop.run(callback, scene);
 }
 
 void GameEngine::stop()
 {
 	loop.stop();
+}
+
+GLuint GameEngine::addRendererToEntity(GLuint entityId)
+{
+	return graphics.addRendererToEntity(scene.getEntity(entityId));
 }

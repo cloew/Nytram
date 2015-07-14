@@ -2,8 +2,9 @@
 
 #include "FrameLimiter.h"
 #include "GameWindow.h"
-#include "Graphics.h"
 #include "InputHandler.h"
+
+#include "GameObjects/Scene.h"
 
 typedef void (*GameLoop_Callback)();
 
@@ -11,14 +12,13 @@ class GameLoop
 {
 public:
 	GameLoop() {}
-	GameLoop(GameWindow* window, Graphics* graphics, InputHandler* inputHandler);
+	GameLoop(GameWindow* window, InputHandler* inputHandler);
 
-	void run(GameLoop_Callback callback);
+	void run(GameLoop_Callback callback, Scene& scene);
 	void stop();
 
 private:
 	GameWindow* gameWindow;
-	Graphics* graphics;
 	InputHandler* inputHandler;
 	FrameLimiter frameLimiter;
 };

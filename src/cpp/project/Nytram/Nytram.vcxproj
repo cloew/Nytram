@@ -24,6 +24,7 @@
     <ClCompile Include="..\..\src\GameLoop.cpp" />
     <ClCompile Include="..\..\src\GameObjects\Entity.cpp" />
     <ClCompile Include="..\..\src\GameObjects\EntityGraphic.cpp" />
+    <ClCompile Include="..\..\src\GameObjects\Scene.cpp" />
     <ClCompile Include="..\..\src\GameWindow.cpp" />
     <ClCompile Include="..\..\src\Graphics.cpp" />
     <ClCompile Include="..\..\src\Graphics\GLBuffer.cpp" />
@@ -41,6 +42,7 @@
     <ClInclude Include="..\..\src\GameLoop.h" />
     <ClInclude Include="..\..\src\GameObjects\Entity.h" />
     <ClInclude Include="..\..\src\GameObjects\EntityGraphic.h" />
+    <ClInclude Include="..\..\src\GameObjects\Scene.h" />
     <ClInclude Include="..\..\src\GameWindow.h" />
     <ClInclude Include="..\..\src\Graphics.h" />
     <ClInclude Include="..\..\src\Graphics\GLBuffer.h" />
