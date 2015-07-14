@@ -8,8 +8,13 @@
 extern "C" {
 #endif
 
+	// Engine
 	NYTRAM_API void Nytram_Run(GameLoop_Callback callback);
 	NYTRAM_API void Nytram_Stop();
+
+	// Entity
+	NYTRAM_API GLuint Entity_Add();
+	NYTRAM_API GLuint Entity_AddRenderer(GLuint entityId, GLuint shaderProgramId);
 
 	// Keyboard
 	NYTRAM_API void Keyboard_SetCallback(Keyboard_Callback callback);

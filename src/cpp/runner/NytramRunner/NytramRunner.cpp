@@ -24,10 +24,22 @@ void mouseCallback(int button, bool pressed)
 int _tmain(int argc, _TCHAR* argv[])
 {
 	GameLoop_Callback myLoopCallback = loopCallback;
+	Shader_AddShader(1, "../../resources/basic.vert", GL_VERTEX_SHADER);
+	Shader_AddShader(2, "../../resources/basic.frag", GL_FRAGMENT_SHADER);
+
+	GLuint shaderIds[] = {1, 2};
+	Shader_AddProgram(1, shaderIds, 2);
+	GLuint entityId = Entity_Add();
+	Entity_AddRenderer(entityId, 1);
+
+	Window_SetSize(480, 480);
 	Window_SetTitle("My Blank Title");
+
 	Keyboard_SetCallback((Keyboard_Callback) keyboardCallback);
 	Mouse_SetButtonCallback((MouseButton_Callback) mouseCallback);
+	
 	Nytram_Run(myLoopCallback);
+	
 	system("PAUSE");
 	return 0;
 }
