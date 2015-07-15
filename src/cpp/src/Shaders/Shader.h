@@ -23,10 +23,10 @@ public:
 
 private:
 	GLuint shaderId;
-	const char* filePath;
+	string filePath;
 	GLenum shaderType;
 	
-	void loadShaderCode(const char* filePath, string& shaderCode);
+	void loadShaderCode(const string& filePath, string& shaderCode);
 	void compile(char const* sourcePointer);
 	void checkCompileErrors();
 };

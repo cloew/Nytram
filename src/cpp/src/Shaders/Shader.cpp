@@ -28,7 +28,7 @@ void Shader::compile()
 	checkCompileErrors();
 }
 
-void Shader::loadShaderCode(const char* filePath, string& shaderCode)
+void Shader::loadShaderCode(const string& filePath, string& shaderCode)
 {
 	ifstream shaderStream(filePath, ios::in);
 	if(shaderStream.is_open())
