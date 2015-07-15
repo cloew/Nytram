@@ -1,4 +1,4 @@
-from nytram_cpp_wrapper import CPP_LIB
+from .nytram_cpp_wrapper import CPP_LIB
 
 class Window:
     """ Represents the application window """

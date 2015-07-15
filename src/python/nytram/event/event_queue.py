@@ -1,5 +1,5 @@
-from events import Keys, MouseButtons
-from nytram.nytram_cpp_wrapper import CPP_LIB, KeyboardCallback, MouseButtonCallback, GetCallbackMethod
+from .events import Keys, MouseButtons
+from ..nytram_cpp_wrapper import CPP_LIB, KeyboardCallback, MouseButtonCallback, GetCallbackMethod
 
 from collections import deque
 
@@ -18,7 +18,7 @@ class Event:
         return "{0} was {1}".format(self.enum.tostring(self.eventType), self.PRESSED_STRING[self.pressed])
 
 class EventQueue:
-    """ Represents the queu of events to process in the game """
+    """ Represents the queue of events to process in the game """
     
     def __init__(self):
         """ Initialize the event queue """

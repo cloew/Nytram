@@ -1,7 +1,7 @@
-from nytram_cpp_wrapper import CPP_LIB, GameLoopCallback, GetCallbackMethod
-from event.event_queue import EventQueue
-from mouse import mouse
-from window import Window
+from .nytram_cpp_wrapper import CPP_LIB, GameLoopCallback, GetCallbackMethod
+from .event.event_queue import EventQueue
+from .mouse import mouse
+from .window import Window
 
 class Application:
     """ Represents the current application """
@@ -29,4 +29,4 @@ class Application:
         """ Runs on each frame """
         while self.eventQueue.hasEvents():
             event = self.eventQueue.pop()
-            print event
+            print(event)
