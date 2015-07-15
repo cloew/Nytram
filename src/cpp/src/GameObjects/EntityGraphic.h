@@ -26,6 +26,7 @@ public:
 private:
 	GLVertexArray vao;
 	vector<GLBuffer> buffers;
-	map<GLuint, vector<GLfloat>> attributeToValues;
 	ShaderProgram* shaderProgram;
+
+	map<GLuint, vector<GLfloat>> attributeToValues;
 };

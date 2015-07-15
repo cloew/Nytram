@@ -19,9 +19,9 @@ GLuint Entity_Add()
 	return engine.addEntity();
 }
 
-GLuint Entity_AddRenderer(GLuint entityId, GLuint shaderProgramId)
+void Entity_AddRenderer(GLuint entityId, GLuint rendererId)
 {
-	return engine.addRendererToEntity(entityId, shaderProgramId);
+	engine.addRendererToEntity(entityId, rendererId);
 }
 
 // Keyboard
@@ -37,6 +37,11 @@ void Mouse_SetButtonCallback(MouseButton_Callback callback)
 }
 
 // Renderers
+GLuint Renderer_Add(GLuint shaderProgramId)
+{
+	return engine.addRenderer(shaderProgramId);
+}
+
 void Renderer_AddVertexBuffer(GLuint rendererId, GLuint shaderAttribute, float vertices[], GLuint size)
 {
 	engine.addVertexBuffer(rendererId, shaderAttribute, vertices, size);

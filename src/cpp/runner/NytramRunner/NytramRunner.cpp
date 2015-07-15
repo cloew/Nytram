@@ -31,24 +31,43 @@ int _tmain(int argc, _TCHAR* argv[])
 	Shader_AddProgram(1, shaderIds, 2);
 	
 	// Entity
-	GLuint entityId = Entity_Add();
-	GLuint rendererId = Entity_AddRenderer(entityId, 1);
+	GLuint entity1Id = Entity_Add();
+	GLuint entity2Id = Entity_Add();
+	GLuint renderer1Id = Renderer_Add(1);
+	GLuint renderer2Id = Renderer_Add(1);
 
+	Entity_AddRenderer(entity1Id, renderer1Id);
+	Entity_AddRenderer(entity2Id, renderer2Id);
 	
-	float vertices[] = 
+	float vertices1[] = 
 	{
-		-.5, -.5, 0,
-		0, .5, 0,
-		.5, -.5, 0
+		-1, 1, 0,
+		0, 0, 0,
+		-1, -1, 0
 	};
-	float colors[] = 
+	float vertices2[] = 
+	{
+		1, 1, 0,
+		1, -1, 0,
+		0, 0, 0
+	};
+	float colors1[] = 
 	{
 		1, 0, 0,
 		0, 1, 0,
 		0, 0, 1
 	};
-	Renderer_AddVertexBuffer(rendererId, 0, vertices, 9);
-	Renderer_AddVertexBuffer(rendererId, 1, colors, 9);
+	float colors2[] = 
+	{
+		1, 0, 0,
+		0, 0, 1,
+		0, 1, 0
+	};
+	Renderer_AddVertexBuffer(renderer1Id, 0, vertices1, 9);
+	Renderer_AddVertexBuffer(renderer1Id, 1, colors1, 9);
+	
+	Renderer_AddVertexBuffer(renderer2Id, 0, vertices2, 9);
+	Renderer_AddVertexBuffer(renderer2Id, 1, colors2, 9);
 
 	Window_SetSize(480, 480);
 	Window_SetTitle("My Blank Title");

@@ -18,9 +18,10 @@ public:
 
 	// Entities
 	GLuint addEntity() {return scene.addEntity();}
-	GLuint addRendererToEntity(GLuint entityId, GLuint shaderProgramId);
+	void addRendererToEntity(GLuint entityId, GLuint rendererId);
 	
 	// Graphics
+	GLuint addRenderer(GLuint shaderProgramId) {return graphics.addRenderer(shaderProgramId);}
 	void addVertexBuffer(GLuint rendererId, GLuint shaderAttribute, float vertices[], GLuint size) {graphics.addVertexBuffer(rendererId, shaderAttribute, vertices, size);}
 	void addShader(GLuint id, const char* filePath, GLenum shaderType) {graphics.addShader(id, filePath, shaderType);}
 	void addShaderProgram(GLuint id, vector<GLuint> shaderIds) {graphics.addShaderProgram(id, shaderIds);}

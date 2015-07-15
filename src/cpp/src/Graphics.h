@@ -14,8 +14,8 @@ public:
 	void initialize(); // Must be called AFTER the GameWindow has been opened
 
 	// Renderers
-	GLuint addRendererToEntity(Entity& entity, GLuint shaderProgramId);
-	GLuint addRenderer(ShaderProgram* shaderProgram);
+	void addRendererToEntity(Entity& entity, GLuint shaderProgramId);
+	GLuint addRenderer(GLuint shaderProgramId);
 	void addVertexBuffer(GLuint rendererId, GLuint shaderAttribute, float vertices[], GLuint size);
 
 	// Shaders

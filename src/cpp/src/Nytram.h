@@ -14,7 +14,7 @@ extern "C" {
 
 	// Entity
 	NYTRAM_API GLuint Entity_Add();
-	NYTRAM_API GLuint Entity_AddRenderer(GLuint entityId, GLuint shaderProgramId);
+	NYTRAM_API void Entity_AddRenderer(GLuint entityId, GLuint rendererId);
 
 	// Keyboard
 	NYTRAM_API void Keyboard_SetCallback(Keyboard_Callback callback);
@@ -23,6 +23,7 @@ extern "C" {
 	NYTRAM_API void Mouse_SetButtonCallback(MouseButton_Callback callback);
 
 	// Renderers
+	NYTRAM_API GLuint Renderer_Add(GLuint shaderProgramId);
 	NYTRAM_API void Renderer_AddVertexBuffer(GLuint rendererId, GLuint shaderAttribute, float vertices[], GLuint size);
 
 	// Shaders
