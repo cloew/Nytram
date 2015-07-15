@@ -1,4 +1,4 @@
-from ..nytram_cpp_wrapper import CPP_LIB
+from ..engine import CppEngine
 
 class Shader:
     """ Represents an OpenGL shader """
@@ -9,4 +9,4 @@ class Shader:
         self.filePath = filePath
         self.shaderType = shaderType
         
-        CPP_LIB.Shader_AddShader(id, filePath.encode("utf-8"), shaderType)
+        CppEngine.Shader_AddShader(id, filePath.encode("utf-8"), shaderType)

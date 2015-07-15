@@ -1,4 +1,4 @@
-from .nytram_cpp_wrapper import CPP_LIB
+from .engine import CppEngine
 
 class Window:
     """ Represents the application window """
@@ -11,5 +11,5 @@ class Window:
         
     def apply(self):
         """ Apply the Window parameters to the actual window """
-        CPP_LIB.Window_SetSize(self.width, self.height)
-        CPP_LIB.Window_SetTitle(self.title.encode("utf-8"))
+        CppEngine.Window_SetSize(self.width, self.height)
+        CppEngine.Window_SetTitle(self.title.encode("utf-8"))

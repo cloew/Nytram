@@ -1,4 +1,4 @@
-from ..nytram_cpp_wrapper import CPP_LIB
+from ..engine import CppEngine, ListToArray
 
 from ctypes import c_uint
 
@@ -11,4 +11,4 @@ class ShaderProgram:
         self.shaders = shaders
         
         shaderIds = [shader.id for shader in shaders]
-        CPP_LIB.Shader_AddProgram(id, (c_uint*len(shaderIds))(*shaderIds), len(shaderIds))
+        CppEngine.Shader_AddProgram(id, *ListToArray(shaderIds, c_uint))

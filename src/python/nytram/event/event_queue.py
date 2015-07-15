@@ -1,5 +1,5 @@
 from .events import Keys, MouseButtons
-from ..nytram_cpp_wrapper import CPP_LIB, KeyboardCallback, MouseButtonCallback, GetCallbackMethod
+from ..engine import CppEngine, KeyboardCallback, MouseButtonCallback, GetCallbackMethod
 
 from collections import deque
 
@@ -31,10 +31,10 @@ class EventQueue:
     def applyCallback(self):
         """ Set the Mouse Button callback """
         self.buttonCallback = GetCallbackMethod(self, MouseButtonCallback, self.on_mouse_button_pressed)
-        CPP_LIB.Mouse_SetButtonCallback(self.buttonCallback)
+        CppEngine.Mouse_SetButtonCallback(self.buttonCallback)
         
         self.keyboardCallback = GetCallbackMethod(self, KeyboardCallback, self.on_key_pressed)
-        CPP_LIB.Keyboard_SetCallback(self.keyboardCallback)
+        CppEngine.Keyboard_SetCallback(self.keyboardCallback)
     
     def on_key_pressed(self, key, pressed):
         """ Callback to be called when a key button is pressed """
