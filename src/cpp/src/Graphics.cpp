@@ -28,6 +28,11 @@ GLuint Graphics::addRenderer(GLuint shaderProgramId)
 	return entityGraphics.size();
 }
 
+void Graphics::addElementBuffer(GLuint rendererId, GLuint elements[], GLuint size)
+{
+	entityGraphics[rendererId-1].addElementBuffer(elements, size);
+}
+
 void Graphics::addVertexBuffer(GLuint rendererId, GLuint shaderAttribute, float vertices[], GLuint size)
 {
 	entityGraphics[rendererId-1].addVertexBuffer(shaderAttribute, vertices, size);

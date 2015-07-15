@@ -16,6 +16,7 @@ public:
 	// Renderers
 	void addRendererToEntity(Entity& entity, GLuint shaderProgramId);
 	GLuint addRenderer(GLuint shaderProgramId);
+	void addElementBuffer(GLuint rendererId, GLuint elements[], GLuint size);
 	void addVertexBuffer(GLuint rendererId, GLuint shaderAttribute, float vertices[], GLuint size);
 
 	// Shaders

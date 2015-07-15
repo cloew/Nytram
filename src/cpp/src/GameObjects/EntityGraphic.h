@@ -30,5 +30,6 @@ private:
 	vector<GLBuffer> buffers;
 	ShaderProgram* shaderProgram;
 
+	vector<GLuint> elements;
 	map<GLuint, vector<GLfloat>> attributeToValues;
 };

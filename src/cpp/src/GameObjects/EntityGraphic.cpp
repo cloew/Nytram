@@ -3,16 +3,11 @@
 void EntityGraphic::initialize()
 {
 	vao.makeCurrent();
-
-	GLuint elements[] =
-	{
-		0,1,2
-	};
-
 	buffers.reserve(attributeToValues.size()+1);
+
 	GLBuffer elementBuffer(GL_ELEMENT_ARRAY_BUFFER);
 	buffers.push_back(elementBuffer);
-	buffers[0].setData(sizeof(elements), elements, GL_STATIC_DRAW);
+	buffers[0].setData(this->elements, GL_STATIC_DRAW);
 
 	for (auto &pair : attributeToValues)
 	{
@@ -22,6 +17,11 @@ void EntityGraphic::initialize()
 		buffers[index].setData(pair.second, GL_STATIC_DRAW);
 		shaderProgram->getAttribute(pair.first)->bind(buffers[index], 3, GL_FLOAT, GL_FALSE, 0, 0);
 	}
+}
+
+void EntityGraphic::addElementBuffer(GLuint elements[], GLuint size)
+{
+	this->elements = ArrayToVector<GLuint>(elements, size);
 }
 
 void EntityGraphic::addVertexBuffer(GLuint shaderAttribute, GLfloat vertices[], GLuint size)
@@ -34,5 +34,5 @@ void EntityGraphic::draw()
 	vao.makeCurrent();
 	shaderProgram->use();
 	//shaderProgram->setUniformValue("triangleColor", 0, 1, 0);
-	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
+	glDrawElements(GL_TRIANGLES, elements.size(), GL_UNSIGNED_INT, 0);
 }

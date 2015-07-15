@@ -28,11 +28,6 @@ void GLBuffer::makeCurrent()
 	glBindBuffer(target, bufferId);
 }
 
-void GLBuffer::setData(vector<GLfloat> data, GLenum usage)
-{
-	setData(data.size() * sizeof(GLfloat), &data[0], usage);
-}
-
 void GLBuffer::setData(GLsizeiptr size, const GLvoid* data, GLenum usage)
 {
 	makeCurrent();

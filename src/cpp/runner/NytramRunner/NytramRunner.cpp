@@ -32,42 +32,36 @@ int _tmain(int argc, _TCHAR* argv[])
 	
 	// Entity
 	GLuint entity1Id = Entity_Add();
-	GLuint entity2Id = Entity_Add();
 	GLuint renderer1Id = Renderer_Add(1);
-	GLuint renderer2Id = Renderer_Add(1);
 
 	Entity_AddRenderer(entity1Id, renderer1Id);
-	Entity_AddRenderer(entity2Id, renderer2Id);
+
+	GLuint elements[] =
+	{
+		0,1,2,
+		3,1,4
+	};
 	
-	float vertices1[] = 
+	float vertices[] = 
 	{
 		-1, 1, 0,
 		0, 0, 0,
-		-1, -1, 0
-	};
-	float vertices2[] = 
-	{
+		-1, -1, 0,
 		1, 1, 0,
-		1, -1, 0,
-		0, 0, 0
+		1, -1, 0
 	};
-	float colors1[] = 
+	float colors[] = 
 	{
 		1, 0, 0,
 		0, 1, 0,
+		0, 0, 1,
+		1, 0, 0,
 		0, 0, 1
 	};
-	float colors2[] = 
-	{
-		1, 0, 0,
-		0, 0, 1,
-		0, 1, 0
-	};
-	Renderer_AddVertexBuffer(renderer1Id, 0, vertices1, 9);
-	Renderer_AddVertexBuffer(renderer1Id, 1, colors1, 9);
-	
-	Renderer_AddVertexBuffer(renderer2Id, 0, vertices2, 9);
-	Renderer_AddVertexBuffer(renderer2Id, 1, colors2, 9);
+
+	Renderer_AddElementBuffer(renderer1Id, elements, 6);
+	Renderer_AddVertexBuffer(renderer1Id, 0, vertices, 15);
+	Renderer_AddVertexBuffer(renderer1Id, 1, colors, 15);
 
 	Window_SetSize(480, 480);
 	Window_SetTitle("My Blank Title");

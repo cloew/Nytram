@@ -24,6 +24,7 @@ extern "C" {
 
 	// Renderers
 	NYTRAM_API GLuint Renderer_Add(GLuint shaderProgramId);
+	NYTRAM_API void Renderer_AddElementBuffer(GLuint rendererId, GLuint elements[], GLuint size);
 	NYTRAM_API void Renderer_AddVertexBuffer(GLuint rendererId, GLuint shaderAttribute, float vertices[], GLuint size);
 
 	// Shaders

@@ -42,6 +42,11 @@ GLuint Renderer_Add(GLuint shaderProgramId)
 	return engine.addRenderer(shaderProgramId);
 }
 
+void Renderer_AddElementBuffer(GLuint rendererId, GLuint elements[], GLuint size)
+{
+	engine.addElementBuffer(rendererId, elements, size);
+}
+
 void Renderer_AddVertexBuffer(GLuint rendererId, GLuint shaderAttribute, float vertices[], GLuint size)
 {
 	engine.addVertexBuffer(rendererId, shaderAttribute, vertices, size);
