@@ -36,6 +36,12 @@ void Mouse_SetButtonCallback(MouseButton_Callback callback)
 	engine.setMouseButtonCallback(callback);
 }
 
+// Renderers
+void Renderer_AddVertexBuffer(GLuint rendererId, GLuint shaderAttribute, float vertices[], GLuint size)
+{
+	engine.addVertexBuffer(rendererId, shaderAttribute, vertices, size);
+}
+
 // Shaders
 void Shader_AddShader(GLuint id, const char* filePath, GLenum shaderType)
 {

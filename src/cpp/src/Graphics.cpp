@@ -2,9 +2,10 @@
 
 void Graphics::initialize()
 {
-	glewExperimental = true; // Needed for core profile
-	if (glewInit() != GLEW_OK) {
-		cerr << "Failed to initialize GLEW." << endl;
+	glewExperimental = GL_TRUE; // Needed for core profile
+	GLenum error = glewInit();
+	if (error != GLEW_OK) {
+		cerr << "Failed to initialize GLEW: " << glewGetErrorString(error) << endl;
 		return;
 	}
 
@@ -27,4 +28,9 @@ GLuint Graphics::addRenderer(ShaderProgram* shaderProgram)
 {
 	entityGraphics.push_back(EntityGraphic(shaderProgram));
 	return entityGraphics.size();
+}
+
+void Graphics::addVertexBuffer(GLuint rendererId, GLuint shaderAttribute, float vertices[], GLuint size)
+{
+	entityGraphics[rendererId-1].addVertexBuffer(shaderAttribute, vertices, size);
 }

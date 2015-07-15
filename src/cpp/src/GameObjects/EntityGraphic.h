@@ -6,6 +6,9 @@
 #include "Shaders/ShaderProgram.h"
 
 #include <functional>
+#include <vector>
+
+using namespace std;
 
 class EntityGraphic
 {
@@ -14,11 +17,15 @@ public:
 	EntityGraphic(ShaderProgram* shaderProgram) {this->shaderProgram = shaderProgram;}
 
 	void initialize();
+	void addVertexBuffer(GLuint shaderAttribute, float vertices[], GLuint size);
 	void draw();
+
+	// Getters
 	Draw_Callback getDrawCallback() {return std::bind(&EntityGraphic::draw, this);}
 
 private:
 	GLVertexArray vao;
 	vector<GLBuffer> buffers;
+	map<GLuint, vector<GLfloat>> attributeToValues;
 	ShaderProgram* shaderProgram;
 };

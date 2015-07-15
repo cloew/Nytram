@@ -3,6 +3,7 @@
 #include "IncludeGL.h"
 
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -15,6 +16,7 @@ public:
 	void initialize();
 	bool isInitialized() {return bufferId != NULL;}
 	void makeCurrent();
+	void setData(vector<GLfloat> data, GLenum usage); // Note: This will cause this buffer to become the current buffer for its target
 	void setData(GLsizeiptr size, const GLvoid* data, GLenum usage); // Note: This will cause this buffer to become the current buffer for its target
 
 	// Getters

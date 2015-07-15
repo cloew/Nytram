@@ -22,6 +22,9 @@ extern "C" {
 	// Mouse
 	NYTRAM_API void Mouse_SetButtonCallback(MouseButton_Callback callback);
 
+	// Renderers
+	NYTRAM_API void Renderer_AddVertexBuffer(GLuint rendererId, GLuint shaderAttribute, float vertices[], GLuint size);
+
 	// Shaders
 	NYTRAM_API void Shader_AddShader(GLuint id, const char* filePath, GLenum shaderType);
 	NYTRAM_API void Shader_AddProgram(GLuint id, GLuint shaderIds[], GLuint size);

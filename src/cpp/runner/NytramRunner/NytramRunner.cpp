@@ -29,8 +29,26 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	GLuint shaderIds[] = {1, 2};
 	Shader_AddProgram(1, shaderIds, 2);
+	
+	// Entity
 	GLuint entityId = Entity_Add();
-	Entity_AddRenderer(entityId, 1);
+	GLuint rendererId = Entity_AddRenderer(entityId, 1);
+
+	
+	float vertices[] = 
+	{
+		-.5, -.5, 0,
+		0, .5, 0,
+		.5, -.5, 0
+	};
+	float colors[] = 
+	{
+		1, 0, 0,
+		0, 1, 0,
+		0, 0, 1
+	};
+	Renderer_AddVertexBuffer(rendererId, 0, vertices, 9);
+	Renderer_AddVertexBuffer(rendererId, 1, colors, 9);
 
 	Window_SetSize(480, 480);
 	Window_SetTitle("My Blank Title");
