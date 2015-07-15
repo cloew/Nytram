@@ -54,6 +54,7 @@
     <ClInclude Include="..\..\src\Shaders\ShaderManager.h" />
     <ClInclude Include="..\..\src\Shaders\ShaderProgram.h" />
     <ClInclude Include="..\..\src\Shaders\VertexAttribute.h" />
+    <ClInclude Include="..\..\src\Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\lib\glew-1.9.0\build\GLEW_190.vcxproj">

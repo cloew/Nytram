@@ -2,6 +2,7 @@
 
 #include "Entity.h"
 
+#include "Utils.h"
 #include "Graphics/GLVertexArray.h"
 #include "Shaders/ShaderProgram.h"
 
@@ -17,6 +18,7 @@ public:
 	EntityGraphic(ShaderProgram* shaderProgram) {this->shaderProgram = shaderProgram;}
 
 	void initialize();
+	void addElementBuffer(GLuint elements[], GLuint size);
 	void addVertexBuffer(GLuint shaderAttribute, float vertices[], GLuint size);
 	void draw();
 

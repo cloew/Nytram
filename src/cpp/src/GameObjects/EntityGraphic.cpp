@@ -26,14 +26,7 @@ void EntityGraphic::initialize()
 
 void EntityGraphic::addVertexBuffer(GLuint shaderAttribute, GLfloat vertices[], GLuint size)
 {
-	vector<GLfloat> floats;
-	floats.reserve(size);
-	for (GLuint i = 0; i < size; i++)
-	{
-		floats.push_back(vertices[i]);
-	}
-
-	attributeToValues[shaderAttribute] = floats;
+	attributeToValues[shaderAttribute] = ArrayToVector<GLfloat>(vertices, size);
 }
 
 void EntityGraphic::draw()
