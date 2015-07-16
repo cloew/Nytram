@@ -21,7 +21,7 @@ def main(args):
     entity = Entity(renderer=renderer)
     transform = Transform()
     transform.entity = entity
-    transform.position = [1, 1, -100]
+    transform.position = [0, 0, 0]
     
     projection = OrthoProjection(width=2, height=2)
     camera = Camera(eye=[0.0, 0.0, 10.0], projection=projection)
