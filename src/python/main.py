@@ -21,7 +21,6 @@ def main(args):
     projection = OrthoProjection()
     camera = Camera(eye=[0.0, 0.0, 10.0], projection=projection)
     
-    
     print(app.run())
 
 if __name__ == "__main__":

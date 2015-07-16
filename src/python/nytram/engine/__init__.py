@@ -14,3 +14,7 @@ def GetCallbackMethod(self, cfunctionPrototype, objectMethod):
 def ListToArray(l, ctype):
     """ Convert a List to an Array """
     return (ctype*len(l))(*l), len(l)
+    
+def VectorToArguments(v, ctype):
+    """ Convert a Vector to a list of arguments """
+    return [ctype(value) for value in v]
