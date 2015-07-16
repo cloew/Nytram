@@ -16,6 +16,10 @@ class GameEngine
 public:
 	GameEngine();
 
+	// Camera
+	void setCameraEye(const vec3& eye) {scene.setEye(eye);}
+	void setCameraProjection(GLfloat width, GLfloat height, GLfloat nearClip, GLfloat farClip) {scene.setProjection(width, height, nearClip, farClip);}
+
 	// Engine
 	void run(GameLoop_Callback callback);
 	void stop();

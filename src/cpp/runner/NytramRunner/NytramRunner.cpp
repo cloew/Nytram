@@ -68,6 +68,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	Entity_RotateInXY(entity1Id, 0);
 	Entity_Scale(entity1Id, 1, 1, 1);
 
+	Camera_SetEye(0, 0, 10);
+	Camera_SetProjection(2, 2, 1, 100);
+
 	Window_SetSize(480, 480);
 	Window_SetTitle("My Blank Title");
 

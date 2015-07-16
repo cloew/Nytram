@@ -2,6 +2,17 @@
 
 GameEngine engine;
 
+// Camera
+void Camera_SetEye(GLfloat x, GLfloat y, GLfloat z)
+{
+	engine.setCameraEye(vec3(x, y, z));
+}
+
+void Camera_SetProjection(GLfloat width, GLfloat height, GLfloat nearClip, GLfloat farClip)
+{
+	engine.setCameraProjection(width, height, nearClip, farClip);
+}
+
 // Engine
 void Nytram_Run(GameLoop_Callback callback)
 {

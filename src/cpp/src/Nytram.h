@@ -12,6 +12,10 @@ using namespace glm;
 extern "C" {
 #endif
 
+	// Camera
+	NYTRAM_API void Camera_SetEye(GLfloat x, GLfloat y, GLfloat z);
+	NYTRAM_API void Camera_SetProjection(GLfloat width, GLfloat height, GLfloat nearClip, GLfloat farClip);
+
 	// Engine
 	NYTRAM_API void Nytram_Run(GameLoop_Callback callback);
 	NYTRAM_API void Nytram_Stop();
