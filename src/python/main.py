@@ -4,6 +4,8 @@ from nytram.entity.camera import Camera, OrthoProjection
 from nytram.renderers import EntityRenderer
 from nytram.shaders import Shader, ShaderProgram, ShaderTypes
 
+from nytram.entity.transform import Transform
+
 import sys
 
 def main(args):
@@ -17,8 +19,11 @@ def main(args):
     renderer = EntityRenderer(shaderProgram, elements=[0,1,2], vertexData={0:[-1, 1, 0, 0, 0, 0, -1, -1, 0],
                                                                            1:[1, 0, 0, 0, 1, 0, 0, 0, 1]})
     entity = Entity(renderer=renderer)
+    transform = Transform()
+    transform.entity = entity
+    transform.position = [1, 1, -100]
     
-    projection = OrthoProjection()
+    projection = OrthoProjection(width=2, height=2)
     camera = Camera(eye=[0.0, 0.0, 10.0], projection=projection)
     
     print(app.run())
