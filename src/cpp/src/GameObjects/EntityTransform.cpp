@@ -1,5 +1,11 @@
 #include "EntityTransform.h"
 
+void EntityTransform::translate(const vec3& translation)
+{
+	this->translation = translation;
+	buildModelMatrix();
+}
+
 void EntityTransform::rotateInXY(GLfloat angleInDegrees)
 {
 	this->rotation.z = angleInDegrees;
@@ -18,9 +24,9 @@ void EntityTransform::rotateInXZ(GLfloat angleInDegrees)
 	buildModelMatrix();
 }
 
-void EntityTransform::translate(const vec3& translation)
+void EntityTransform::scale(const vec3& scaling)
 {
-	this->translation = translation;
+	this->scaling = scaling;
 	buildModelMatrix();
 }
 
@@ -31,4 +37,5 @@ void EntityTransform::buildModelMatrix()
 	model = glm::rotate(model, rotation.x, vec3(1, 0, 0));
 	model = glm::rotate(model, rotation.y, vec3(0, 1, 0));
 	model = glm::rotate(model, rotation.z, vec3(0, 0, 1));
+	model = glm::scale(model, scaling);
 }

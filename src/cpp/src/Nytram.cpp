@@ -34,6 +34,10 @@ void Entity_RotateInXZ(GLuint entityId, GLfloat angleInDegrees)
 	engine.rotateEntityInXZ(entityId, angleInDegrees);
 }
 
+void Entity_Scale(GLuint entityId, GLfloat x, GLfloat y, GLfloat z)
+{
+	engine.scaleEntity(entityId, vec3(x, y, z));
+}
 
 void Entity_Translate(GLuint entityId, GLfloat x, GLfloat y, GLfloat z)
 {

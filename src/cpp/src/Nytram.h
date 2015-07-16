@@ -21,6 +21,7 @@ extern "C" {
 	NYTRAM_API void Entity_RotateInXY(GLuint entityId, GLfloat angleInDegrees);
 	NYTRAM_API void Entity_RotateInYZ(GLuint entityId, GLfloat angleInDegrees);
 	NYTRAM_API void Entity_RotateInXZ(GLuint entityId, GLfloat angleInDegrees);
+	NYTRAM_API void Entity_Scale(GLuint entityId, GLfloat x, GLfloat y, GLfloat z);
 	NYTRAM_API void Entity_Translate(GLuint entityId, GLfloat x, GLfloat y, GLfloat z);
 	NYTRAM_API void Entity_AddRenderer(GLuint entityId, GLuint rendererId);
 

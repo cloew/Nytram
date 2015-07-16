@@ -25,6 +25,7 @@ public:
 	void rotateEntityInXY(GLuint entityId, GLfloat angleInDegrees) {scene.getEntity(entityId).rotateInXY(angleInDegrees);}
 	void rotateEntityInYZ(GLuint entityId, GLfloat angleInDegrees) {scene.getEntity(entityId).rotateInYZ(angleInDegrees);}
 	void rotateEntityInXZ(GLuint entityId, GLfloat angleInDegrees) {scene.getEntity(entityId).rotateInXZ(angleInDegrees);}
+	void scaleEntity(GLuint entityId, const vec3& scaling) {scene.getEntity(entityId).scale(scaling);}
 	void translateEntity(GLuint entityId, const vec3& translation);
 	void addRendererToEntity(GLuint entityId, GLuint rendererId);
 	

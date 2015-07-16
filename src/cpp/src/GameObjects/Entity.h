@@ -22,6 +22,7 @@ public:
 	void rotateInXY(GLfloat angleInDegrees) {transform.rotateInXY(angleInDegrees);}
 	void rotateInYZ(GLfloat angleInDegrees) {transform.rotateInYZ(angleInDegrees);}
 	void rotateInXZ(GLfloat angleInDegrees) {transform.rotateInXZ(angleInDegrees);}
+	void scale(const vec3& scaling) {transform.scale(scaling);}
 	void translate(const vec3& translation) {transform.translate(translation);}
 
 	// Setters

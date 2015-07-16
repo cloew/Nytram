@@ -2,7 +2,7 @@
 
 void OrthoCamera::initialize()
 {
-	projection = ortho(-1.0f, 1.0f, -1.0f, 1.0f, 1.0f, 100.0f);
+	projection = ortho(-2.0f, 2.0f, -2.0f, 2.0f, 1.0f, 100.0f);
 	view = lookAt(
 		vec3(0,0,10),
 		vec3(0,0,0),
