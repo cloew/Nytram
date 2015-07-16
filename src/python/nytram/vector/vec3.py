@@ -48,3 +48,7 @@ class Vec3:
     def z(self, value):
         """ Set the z component of the vector """
         self.setDimension(value, 2)
+        
+    def __repr__(self):
+        """ Return the string representation """
+        return "Vec3({0}, {1}, {2})".format(self.x, self.y, self.z)
