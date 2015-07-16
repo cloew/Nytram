@@ -2,5 +2,5 @@
 
 void Entity::draw(const mat4& vp)
 {
-	drawCallback(vp*model);
+	drawCallback(vp*transform.getModelMatrix());
 }
