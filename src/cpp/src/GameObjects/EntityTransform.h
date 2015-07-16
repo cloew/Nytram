@@ -2,16 +2,19 @@
 
 #include "IncludeGL.h"
 
+#include <iostream>
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
 using namespace glm;
+using namespace std;
 
 class EntityTransform
 {
 public:
-	
+	EntityTransform() {scaling = vec3(1, 1, 1);}
+
 	void rotateInXY(GLfloat angleInDegrees);
 	void rotateInYZ(GLfloat angleInDegrees);
 	void rotateInXZ(GLfloat angleInDegrees);
@@ -29,4 +32,3 @@ private:
 
 	void buildModelMatrix();
 };
-
