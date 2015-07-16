@@ -1,4 +1,5 @@
 from nytram import Application, Window
+from nytram.entity import Entity
 from nytram.renderers import EntityRenderer
 from nytram.shaders import Shader, ShaderProgram, ShaderTypes
 
@@ -13,6 +14,7 @@ def main(args):
     shaderProgram = ShaderProgram(1, shaders)
     renderer = EntityRenderer(shaderProgram, elements=[0,1,2], vertexData={0:[-1, 1, 0, 0, 0, 0, -1, -1, 0],
                                                                            1:[1, 0, 0, 0, 1, 0, 0, 0, 1]})
+    entity = Entity(renderer=renderer)
     print(app.run())
 
 if __name__ == "__main__":
