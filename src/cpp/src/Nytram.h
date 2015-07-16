@@ -2,6 +2,10 @@
 
 #include "GameEngine.h"
 
+#include <glm/glm.hpp>
+
+using namespace glm;
+
 #define NYTRAM_API __declspec(dllexport)
 
 #if __cplusplus
@@ -14,6 +18,7 @@ extern "C" {
 
 	// Entity
 	NYTRAM_API GLuint Entity_Add();
+	NYTRAM_API void Entity_Translate(GLuint entityId, GLfloat x, GLfloat y, GLfloat z);
 	NYTRAM_API void Entity_AddRenderer(GLuint entityId, GLuint rendererId);
 
 	// Keyboard

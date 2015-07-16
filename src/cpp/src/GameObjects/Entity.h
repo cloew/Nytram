@@ -18,6 +18,9 @@ class Entity
 public:
 	void draw(const mat4& vp);
 	
+	// Transform
+	void translate(const vec3& translation) {transform.translate(translation);}
+
 	// Setters
 	void setDrawCallback(Draw_Callback drawCallback) {this->drawCallback = drawCallback;}
 

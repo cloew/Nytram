@@ -62,6 +62,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	Renderer_AddElementBuffer(renderer1Id, elements, 6);
 	Renderer_AddVertexBuffer(renderer1Id, 0, vertices, 15);
 	Renderer_AddVertexBuffer(renderer1Id, 1, colors, 15);
+	Entity_Translate(entity1Id, 0, 0, 0);
 
 	Window_SetSize(480, 480);
 	Window_SetTitle("My Blank Title");

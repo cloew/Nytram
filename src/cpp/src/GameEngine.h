@@ -7,6 +7,10 @@
 
 #include "GameObjects/Scene.h"
 
+#include <glm/glm.hpp>
+
+using namespace glm;
+
 class GameEngine
 {
 public:
@@ -18,6 +22,7 @@ public:
 
 	// Entities
 	GLuint addEntity() {return scene.addEntity();}
+	void translateEntity(GLuint entityId, const vec3& translation);
 	void addRendererToEntity(GLuint entityId, GLuint rendererId);
 	
 	// Graphics

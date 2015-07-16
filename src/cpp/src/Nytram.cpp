@@ -19,6 +19,11 @@ GLuint Entity_Add()
 	return engine.addEntity();
 }
 
+void Entity_Translate(GLuint entityId, GLfloat x, GLfloat y, GLfloat z)
+{
+	engine.translateEntity(entityId, vec3(x, y, z));
+}
+
 void Entity_AddRenderer(GLuint entityId, GLuint rendererId)
 {
 	engine.addRendererToEntity(entityId, rendererId);
