@@ -19,6 +19,22 @@ GLuint Entity_Add()
 	return engine.addEntity();
 }
 
+void Entity_RotateInXY(GLuint entityId, GLfloat angleInDegrees)
+{
+	engine.rotateEntityInXY(entityId, angleInDegrees);
+}
+
+void Entity_RotateInYZ(GLuint entityId, GLfloat angleInDegrees)
+{
+	engine.rotateEntityInYZ(entityId, angleInDegrees);
+}
+
+void Entity_RotateInXZ(GLuint entityId, GLfloat angleInDegrees)
+{
+	engine.rotateEntityInXZ(entityId, angleInDegrees);
+}
+
+
 void Entity_Translate(GLuint entityId, GLfloat x, GLfloat y, GLfloat z)
 {
 	engine.translateEntity(entityId, vec3(x, y, z));

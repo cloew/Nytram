@@ -19,6 +19,9 @@ public:
 	void draw(const mat4& vp);
 	
 	// Transform
+	void rotateInXY(GLfloat angleInDegrees) {transform.rotateInXY(angleInDegrees);}
+	void rotateInYZ(GLfloat angleInDegrees) {transform.rotateInYZ(angleInDegrees);}
+	void rotateInXZ(GLfloat angleInDegrees) {transform.rotateInXZ(angleInDegrees);}
 	void translate(const vec3& translation) {transform.translate(translation);}
 
 	// Setters
