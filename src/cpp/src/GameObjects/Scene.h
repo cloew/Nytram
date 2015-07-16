@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Entity.h"
+#include "OrthoCamera.h"
 
 #include <vector>
 using namespace std;
@@ -9,6 +10,7 @@ class Scene
 {
 public:
 	GLuint addEntity();
+	void initialize();
 	void draw();
 
 	// Getters
@@ -16,5 +18,5 @@ public:
 
 private:
 	vector<Entity> entities;
+	OrthoCamera camera;
 };
-

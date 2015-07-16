@@ -29,10 +29,10 @@ void EntityGraphic::addVertexBuffer(GLuint shaderAttribute, GLfloat vertices[], 
 	attributeToValues[shaderAttribute] = ArrayToVector<GLfloat>(vertices, size);
 }
 
-void EntityGraphic::draw()
+void EntityGraphic::draw(const mat4& mvp)
 {
 	vao.makeCurrent();
 	shaderProgram->use();
-	//shaderProgram->setUniformValue("triangleColor", 0, 1, 0);
+	shaderProgram->setUniformValue("MVP", mvp);
 	glDrawElements(GL_TRIANGLES, elements.size(), GL_UNSIGNED_INT, 0);
 }

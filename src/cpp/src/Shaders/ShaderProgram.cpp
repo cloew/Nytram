@@ -39,3 +39,9 @@ void ShaderProgram::setUniformValue(const char* name, GLfloat x, GLfloat y, GLfl
 	GLint uniformId = glGetUniformLocation(programId, name);
 	glUniform3f(uniformId, x, y, z);
 }
+
+void ShaderProgram::setUniformValue(const char* name, const mat4& matrix)
+{
+	GLint uniformId = glGetUniformLocation(programId, name);
+	glUniformMatrix4fv(uniformId, 1, GL_FALSE, &matrix[0][0]);
+}

@@ -9,6 +9,9 @@
 #include <functional>
 #include <vector>
 
+#include <glm/glm.hpp>
+
+using namespace glm;
 using namespace std;
 
 class EntityGraphic
@@ -20,10 +23,10 @@ public:
 	void initialize();
 	void addElementBuffer(GLuint elements[], GLuint size);
 	void addVertexBuffer(GLuint shaderAttribute, float vertices[], GLuint size);
-	void draw();
+	void draw(const mat4& mvp);
 
 	// Getters
-	Draw_Callback getDrawCallback() {return std::bind(&EntityGraphic::draw, this);}
+	Draw_Callback getDrawCallback() {return std::bind(&EntityGraphic::draw, this, placeholders::_1);}
 
 private:
 	GLVertexArray vao;

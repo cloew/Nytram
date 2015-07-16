@@ -10,6 +10,7 @@ void GameEngine::run(GameLoop_Callback callback)
 {
 	gameWindow.open();
 	graphics.initialize();
+	scene.initialize();
 	inputHandler.bindCallbacks();
 
 	loop.run(callback, scene);

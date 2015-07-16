@@ -24,6 +24,7 @@
     <ClCompile Include="..\..\src\GameLoop.cpp" />
     <ClCompile Include="..\..\src\GameObjects\Entity.cpp" />
     <ClCompile Include="..\..\src\GameObjects\EntityGraphic.cpp" />
+    <ClCompile Include="..\..\src\GameObjects\OrthoCamera.cpp" />
     <ClCompile Include="..\..\src\GameObjects\Scene.cpp" />
     <ClCompile Include="..\..\src\GameWindow.cpp" />
     <ClCompile Include="..\..\src\Graphics.cpp" />
@@ -42,6 +43,7 @@
     <ClInclude Include="..\..\src\GameLoop.h" />
     <ClInclude Include="..\..\src\GameObjects\Entity.h" />
     <ClInclude Include="..\..\src\GameObjects\EntityGraphic.h" />
+    <ClInclude Include="..\..\src\GameObjects\OrthoCamera.h" />
     <ClInclude Include="..\..\src\GameObjects\Scene.h" />
     <ClInclude Include="..\..\src\GameWindow.h" />
     <ClInclude Include="..\..\src\Graphics.h" />
@@ -132,7 +134,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../../../../lib/glew-1.9.0/include/;../../src;../../../../lib/glfw-3.0.3/include/GLFW;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../../lib/glm-0.9.4.0;../../../../lib/glew-1.9.0/include/;../../src;../../../../lib/glfw-3.0.3/include/GLFW;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>

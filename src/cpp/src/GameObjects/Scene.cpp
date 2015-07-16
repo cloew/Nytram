@@ -6,10 +6,15 @@ GLuint Scene::addEntity()
 	return entities.size();
 }
 
+void Scene:: initialize()
+{
+	camera.initialize();
+}
+
 void Scene::draw()
 {
 	for (auto &entity : entities)
 	{
-		entity.draw();
+		entity.draw(camera.getVP());
 	}
 }

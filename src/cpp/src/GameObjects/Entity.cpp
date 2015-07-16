@@ -1,6 +1,6 @@
 #include "Entity.h"
 
-void Entity::draw()
+void Entity::draw(const mat4& vp)
 {
-	drawCallback();
+	drawCallback(vp*model);
 }
