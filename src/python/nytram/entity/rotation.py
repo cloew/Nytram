@@ -1,5 +1,6 @@
 from nytram.engine import CppEngine, EngineAttr
 from ctypes import c_float
+from copy import deepcopy
 
 aroundZ = EngineAttr("setRotationInXYPlane")
 aroundY = EngineAttr("setRotationInXZPlane")
@@ -29,6 +30,7 @@ class Rotation:
         
     def setRotationInXYPlane(self):
         """ Set the rotation in the XY plane """
+        print(self.inXY)
         if hasattr(self, "entity"):
             CppEngine.Entity_RotateInXY(self.entity.id, c_float(self.inXY))
             
@@ -41,3 +43,22 @@ class Rotation:
         """ Set the rotation in the YZ plane """
         if hasattr(self, "entity"):
             CppEngine.Entity_RotateInYZ(self.entity.id, c_float(self.inYZ))
+            
+    def __copy__(self):
+        """ Return a shallow copy of this Rotation """
+        newone = type(self)()
+        newone.__dict__.update(self.__dict__)
+        newone.inXY = self.inXY
+        newone.inXZ = self.inXZ
+        newone.inYZ = self.inYZ
+        return newone
+            
+    def __deepcopy__(self, memo):
+        """ Return a deep copy of this Rotation """
+        newone = type(self)()
+        for key in self.__dict__:
+            setattr(newone, key, deepcopy(getattr(self, key), memo))
+        newone.inXY = self.inXY
+        newone.inXZ = self.inXZ
+        newone.inYZ = self.inYZ
+        return newone
