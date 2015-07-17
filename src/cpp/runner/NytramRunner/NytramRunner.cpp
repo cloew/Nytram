@@ -8,7 +8,7 @@ using namespace std;
 
 void entityCallback()
 {
-	//cout << "In Entity Update" << endl;
+	cout << "In Entity Update" << endl;
 }
 
 void keyboardCallback(int key, bool pressed)

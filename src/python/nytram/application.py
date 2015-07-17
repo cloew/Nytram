@@ -1,4 +1,4 @@
-from .engine import CppEngine, GetCallbackMethod
+from .engine import CppEngine
 from .event.event_queue import EventQueue
 from .mouse import mouse
 from .window import Window

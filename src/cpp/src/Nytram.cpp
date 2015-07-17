@@ -30,7 +30,7 @@ GLuint Entity_Add()
 	return engine.addEntity();
 }
 
-void Entity_SetUpdateCallback(GLuint entityId, Update_Callback updateCallback)
+void Entity_SetUpdateCallback(GLuint entityId, Update_Callback_fp updateCallback)
 {
 	engine.setEntityUpdateCallback(entityId, updateCallback);
 }
