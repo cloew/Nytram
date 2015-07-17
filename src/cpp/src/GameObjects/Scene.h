@@ -11,6 +11,7 @@ class Scene
 public:
 	GLuint addEntity();
 	void initialize();
+	void update();
 	void draw();
 
 	// Getters

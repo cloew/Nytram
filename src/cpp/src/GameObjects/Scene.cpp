@@ -11,6 +11,14 @@ void Scene:: initialize()
 	camera.initialize();
 }
 
+void Scene::update()
+{
+	for (auto &entity : entities)
+	{
+		entity.update();
+	}
+}
+
 void Scene::draw()
 {
 	for (auto &entity : entities)

@@ -6,16 +6,16 @@ GameLoop::GameLoop(GameWindow* window, InputHandler* inputHandler)
 	this->inputHandler = inputHandler;
 }
 
-void GameLoop::run(GameLoop_Callback callback, Scene& scene)
+void GameLoop::run(Scene& scene)
 {
 	frameLimiter.start();
 	
 	while (!gameWindow->shouldClose())
     {
-		callback();
+		inputHandler->processEvents();
+		scene.update();
 		scene.draw();
 		gameWindow->swapBuffers();
-		inputHandler->processEvents();
 		frameLimiter.enforceFrameLimit();
     }
 	glfwTerminate();

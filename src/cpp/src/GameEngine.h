@@ -21,7 +21,7 @@ public:
 	void setCameraProjection(GLfloat width, GLfloat height, GLfloat nearClip, GLfloat farClip) {scene.setProjection(width, height, nearClip, farClip);}
 
 	// Engine
-	void run(GameLoop_Callback callback);
+	void run();
 	void stop();
 
 	// Entities

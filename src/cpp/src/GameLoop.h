@@ -6,15 +6,13 @@
 
 #include "GameObjects/Scene.h"
 
-typedef void (*GameLoop_Callback)();
-
 class GameLoop
 {
 public:
 	GameLoop() {}
 	GameLoop(GameWindow* window, InputHandler* inputHandler);
 
-	void run(GameLoop_Callback callback, Scene& scene);
+	void run(Scene& scene);
 	void stop();
 
 private:

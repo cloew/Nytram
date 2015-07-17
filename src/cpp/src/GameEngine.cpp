@@ -6,14 +6,14 @@ GameEngine::GameEngine()
 	loop = GameLoop(&gameWindow, &inputHandler);
 }
 
-void GameEngine::run(GameLoop_Callback callback)
+void GameEngine::run()
 {
 	gameWindow.open();
 	graphics.initialize();
 	scene.initialize();
 	inputHandler.bindCallbacks();
 
-	loop.run(callback, scene);
+	loop.run(scene);
 }
 
 void GameEngine::stop()

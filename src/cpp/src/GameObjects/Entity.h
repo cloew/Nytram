@@ -12,10 +12,12 @@ using namespace glm;
 using namespace std;
 
 typedef std::function<void(const mat4&)> Draw_Callback;
+typedef std::function<void()> Update_Callback;
 
 class Entity
 {
 public:
+	void update();
 	void draw(const mat4& vp);
 	
 	// Transform
@@ -31,5 +33,5 @@ public:
 private:
 	EntityTransform transform;
 	Draw_Callback drawCallback;
+	Update_Callback updateCallback;
 };
-

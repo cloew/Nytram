@@ -14,9 +14,9 @@ void Camera_SetProjection(GLfloat width, GLfloat height, GLfloat nearClip, GLflo
 }
 
 // Engine
-void Nytram_Run(GameLoop_Callback callback)
+void Nytram_Run()
 {
-	engine.run(callback);
+	engine.run();
 }
 
 void Nytram_Stop()

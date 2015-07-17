@@ -6,10 +6,6 @@
 
 using namespace std;
 
-void loopCallback()
-{
-	return;
-}
 void keyboardCallback(int key, bool pressed)
 {
 	cout << "Key: " << key << " was pressed: " << pressed << endl;
@@ -23,7 +19,6 @@ void mouseCallback(int button, bool pressed)
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	GameLoop_Callback myLoopCallback = loopCallback;
 	Shader_AddShader(1, "../../resources/basic.vert", GL_VERTEX_SHADER);
 	Shader_AddShader(2, "../../resources/basic.frag", GL_FRAGMENT_SHADER);
 
@@ -77,7 +72,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	Keyboard_SetCallback((Keyboard_Callback) keyboardCallback);
 	Mouse_SetButtonCallback((MouseButton_Callback) mouseCallback);
 	
-	Nytram_Run(myLoopCallback);
+	Nytram_Run();
 	
 	system("PAUSE");
 	return 0;
