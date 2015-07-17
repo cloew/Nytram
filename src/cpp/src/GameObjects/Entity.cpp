@@ -2,10 +2,16 @@
 
 void Entity::update()
 {
-	updateCallback();
+	if (updateCallback)
+	{
+		updateCallback();
+	}
 }
 
 void Entity::draw(const mat4& vp)
 {
-	drawCallback(vp*transform.getModelMatrix());
+	if (drawCallback)
+	{
+		drawCallback(vp*transform.getModelMatrix());
+	}
 }
