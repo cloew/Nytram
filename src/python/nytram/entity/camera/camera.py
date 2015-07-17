@@ -14,10 +14,10 @@ class Camera:
         self.eye = Vec3(eye)
         self.projection = projection
         
-    def setEye(self, value):
+    def setEye(self):
         """ Set the eye in the C++ Engine """
         CppEngine.Camera_SetEye(*VectorToArguments(self.eye, c_float))
         
-    def setProjection(self, value):
+    def setProjection(self):
         """ Set the projection in the C++ Engine """
         self.projection.apply()

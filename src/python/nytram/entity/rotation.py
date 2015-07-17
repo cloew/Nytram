@@ -23,21 +23,21 @@ class Rotation:
     def apply(self, entity):
         """ Apply the rotation """
         self.entity = entity
-        self.setRotationInXYPlane(None)
-        self.setRotationInXZPlane(None)
-        self.setRotationInYZPlane(None)
+        self.setRotationInXYPlane()
+        self.setRotationInXZPlane()
+        self.setRotationInYZPlane()
         
-    def setRotationInXYPlane(self, value):
+    def setRotationInXYPlane(self):
         """ Set the rotation in the XY plane """
         if hasattr(self, "entity"):
             CppEngine.Entity_RotateInXY(self.entity.id, c_float(self.inXY))
             
-    def setRotationInXZPlane(self, value):
+    def setRotationInXZPlane(self):
         """ Set the rotation in the XZ plane """
         if hasattr(self, "entity"):
             CppEngine.Entity_RotateInXZ(self.entity.id, c_float(self.inXZ))
             
-    def setRotationInYZPlane(self, value):
+    def setRotationInYZPlane(self):
         """ Set the rotation in the YZ plane """
         if hasattr(self, "entity"):
             CppEngine.Entity_RotateInYZ(self.entity.id, c_float(self.inYZ))

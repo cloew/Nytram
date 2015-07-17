@@ -19,17 +19,17 @@ class Transform:
         self.scale = Vec3(scale)
         self.rotation = rotation
         
-    def setPosition(self, value):
+    def setPosition(self):
         """ Set the position for this entity in the C++ engine """
         if hasattr(self, "entity"):
             CppEngine.Entity_Translate(self.entity.id, *VectorToArguments(self.position, c_float))
         
-    def setScale(self, value):
+    def setScale(self):
         """ Set the scale for this entity in the C++ engine """
         if hasattr(self, "entity"):
             CppEngine.Entity_Scale(self.entity.id, *VectorToArguments(self.scale, c_float))
         
-    def setRotation(self, value):
+    def setRotation(self):
         """ Set the rotation for this entity in the C++ engine """
         if hasattr(self, "entity"):
             self.rotation.apply(self.entity)
