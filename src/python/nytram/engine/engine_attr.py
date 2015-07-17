@@ -21,4 +21,8 @@ class EngineAttr:
     def __set__(self, obj, value):
         """ Set this attribute """
         self.values[obj] = value
-        getattr(obj, self.callback)()
+        self.getCallback(obj)()
+        
+    def getCallback(self, obj):
+        """ Return the callback function """
+        return getattr(obj, self.callback)

@@ -1,5 +1,6 @@
 from ctypes import cdll, c_bool, c_int, CFUNCTYPE
 from .engine_attr import EngineAttr
+from .wrapped_engine_attr import WrappedEngineAttr
 
 CppEngine = cdll.LoadLibrary("Nytram.dll")
 

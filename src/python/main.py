@@ -23,7 +23,7 @@ def main(args):
     transform.scale = [1, 1, 1]
     transform.rotation = Rotation(inXY=90)
     
-    projection = OrthoProjection(width=10, height=10)
+    projection = OrthoProjection(width=2, height=2)
     camera = Camera(eye=[0.0, 0.0, 10.0], projection=projection)
     
     print(app.run())

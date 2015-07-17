@@ -4,8 +4,9 @@ from kao_decorators import proxy_for
 class Vec3:
     """ Represents a 3-dimension Vector """
     
-    def __init__(self, x, y=0, z=0):
+    def __init__(self, x, y=0, z=0, onChange=None):
         """ Initialize the vector with each coordinate """
+        self.onChange = onChange
         if hasattr(x, '__iter__'):
             self.assign(*x)
         else:
@@ -18,6 +19,8 @@ class Vec3:
     def setDimension(self, value, index):
         """ Set the given vector index to the value given """
         self._vector[index] = value
+        if self.onChange is not None:
+            self.onChange()
         
     @property
     def x(self):
