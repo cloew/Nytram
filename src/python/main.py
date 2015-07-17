@@ -1,10 +1,8 @@
 from nytram import Application, Window
-from nytram.entity import Entity
+from nytram.entity import Entity, Transform, Rotation
 from nytram.entity.camera import Camera, OrthoProjection
 from nytram.renderers import EntityRenderer
 from nytram.shaders import Shader, ShaderProgram, ShaderTypes
-
-from nytram.entity.transform import Transform
 
 import sys
 
@@ -23,6 +21,7 @@ def main(args):
     transform.entity = entity
     transform.position = [0, 0, 0]
     transform.scale = [1, 1, 1]
+    transform.rotation = Rotation(inYZ=80)
     
     projection = OrthoProjection(width=10, height=10)
     camera = Camera(eye=[0.0, 0.0, 10.0], projection=projection)
