@@ -30,7 +30,13 @@ int GameWindow::open()
 		return -1;
 	}
 	glfwMakeContextCurrent(window);
+	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	return 0;
+}
+
+void GameWindow::clear()
+{
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void GameWindow::swapBuffers()

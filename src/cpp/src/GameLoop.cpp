@@ -12,6 +12,7 @@ void GameLoop::run(Scene& scene)
 	
 	while (!gameWindow->shouldClose())
     {
+		gameWindow->clear();
 		inputHandler->processEvents();
 		scene.update();
 		scene.draw();

@@ -13,6 +13,7 @@ public:
 	GameWindow();
 
 	int open();
+	void clear();
 	void swapBuffers();
 	int shouldClose();
 	void quit();
