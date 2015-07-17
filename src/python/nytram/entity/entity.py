@@ -1,13 +1,15 @@
+from .transform import Transform
 from ..engine import CppEngine, EngineAttr
 
 class Entity(object):
     """ Represents an entity in the game engine """
     renderer = EngineAttr("setRenderer")
     
-    def __init__(self, renderer=None):
+    def __init__(self, renderer=None, transform=None):
         """ Initialize the Entity """
         self.id = CppEngine.Entity_Add()
         self.renderer = renderer
+        self.transform = Transform() if transform is None else transform
         
     def setRenderer(self):
         """ Set the Renderer in the C++ Engine """

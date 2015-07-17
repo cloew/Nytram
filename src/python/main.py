@@ -17,10 +17,7 @@ def main(args):
     renderer = EntityRenderer(shaderProgram, elements=[0,1,2], vertexData={0:[-1, 1, 0, 0, 0, 0, -1, -1, 0],
                                                                            1:[1, 0, 0, 0, 1, 0, 0, 0, 1]})
     entity = Entity(renderer=renderer)
-    transform = Transform()
-    entity.transform = transform
-    transform.rotation = Rotation(inXY=90)
-    
+    entity.transform.rotation = Rotation(inXY=90)
     
     projection = OrthoProjection(width=2, height=2)
     camera = Camera(eye=[0.0, 0.0, 10.0], projection=projection)
