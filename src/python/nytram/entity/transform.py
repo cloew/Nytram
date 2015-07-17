@@ -8,6 +8,7 @@ from smart_defaults import smart_defaults, PerCall
 
 class Transform:
     """ Represents an entity's transformation matrix """
+    entity = EngineAttr('apply')
     position = WrappedEngineAttr(Vec3, 'setPosition')
     scale = WrappedEngineAttr(Vec3, 'setScale')
     rotation = EngineAttr('setRotation')
@@ -19,17 +20,23 @@ class Transform:
         self.scale = scale
         self.rotation = rotation
         
+    def apply(self):
+        """ Apply the transform """
+        self.setPosition()
+        self.setScale()
+        self.setRotation()
+        
     def setPosition(self):
         """ Set the position for this entity in the C++ engine """
-        if hasattr(self, "entity"):
+        if self.entity is not None:
             CppEngine.Entity_Translate(self.entity.id, *VectorToArguments(self.position, c_float))
         
     def setScale(self):
         """ Set the scale for this entity in the C++ engine """
-        if hasattr(self, "entity"):
+        if self.entity is not None:
             CppEngine.Entity_Scale(self.entity.id, *VectorToArguments(self.scale, c_float))
         
     def setRotation(self):
         """ Set the rotation for this entity in the C++ engine """
-        if hasattr(self, "entity"):
+        if self.entity is not None:
             self.rotation.apply(self.entity)
