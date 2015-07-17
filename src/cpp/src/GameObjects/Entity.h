@@ -29,6 +29,7 @@ public:
 
 	// Setters
 	void setDrawCallback(Draw_Callback drawCallback) {this->drawCallback = drawCallback;}
+	void setUpdateCallback(Update_Callback updateCallback) {this->updateCallback = updateCallback;}
 
 private:
 	EntityTransform transform;

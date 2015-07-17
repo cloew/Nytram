@@ -22,6 +22,7 @@ extern "C" {
 
 	// Entity
 	NYTRAM_API GLuint Entity_Add();
+	NYTRAM_API void Entity_SetUpdateCallback(GLuint entityId, Update_Callback updateCallback);
 	NYTRAM_API void Entity_RotateInXY(GLuint entityId, GLfloat angleInDegrees);
 	NYTRAM_API void Entity_RotateInYZ(GLuint entityId, GLfloat angleInDegrees);
 	NYTRAM_API void Entity_RotateInXZ(GLuint entityId, GLfloat angleInDegrees);

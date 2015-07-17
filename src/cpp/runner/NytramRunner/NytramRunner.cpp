@@ -6,6 +6,11 @@
 
 using namespace std;
 
+void entityCallback()
+{
+	//cout << "In Entity Update" << endl;
+}
+
 void keyboardCallback(int key, bool pressed)
 {
 	cout << "Key: " << key << " was pressed: " << pressed << endl;
@@ -30,6 +35,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	GLuint renderer1Id = Renderer_Add(1);
 
 	Entity_AddRenderer(entity1Id, renderer1Id);
+	Entity_SetUpdateCallback(entity1Id, entityCallback);
 
 	GLuint elements[] =
 	{

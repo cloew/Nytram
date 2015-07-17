@@ -30,6 +30,11 @@ GLuint Entity_Add()
 	return engine.addEntity();
 }
 
+void Entity_SetUpdateCallback(GLuint entityId, Update_Callback updateCallback)
+{
+	engine.setEntityUpdateCallback(entityId, updateCallback);
+}
+
 void Entity_RotateInXY(GLuint entityId, GLfloat angleInDegrees)
 {
 	engine.rotateEntityInXY(entityId, angleInDegrees);
