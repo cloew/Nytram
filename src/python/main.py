@@ -22,8 +22,9 @@ def main(args):
     transform = Transform()
     transform.entity = entity
     transform.position = [0, 0, 0]
+    transform.scale = [1, 1, 1]
     
-    projection = OrthoProjection(width=2, height=2)
+    projection = OrthoProjection(width=10, height=10)
     camera = Camera(eye=[0.0, 0.0, 10.0], projection=projection)
     
     print(app.run())
