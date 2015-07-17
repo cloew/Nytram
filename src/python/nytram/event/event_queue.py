@@ -38,11 +38,15 @@ class EventQueue:
     
     def on_key_pressed(self, key, pressed):
         """ Callback to be called when a key button is pressed """
-        self.addEvent(Event(key, pressed, Keys))
+        event = Event(key, pressed, Keys)
+        self.addEvent(event)
+        print(event)
     
     def on_mouse_button_pressed(self, button, pressed):
         """ Callback to be called when a mouse button is pressed """
-        self.addEvent(Event(button, pressed, MouseButtons))
+        event = Event(button, pressed, MouseButtons)
+        self.addEvent(event)
+        print(event)
             
     def pop(self):
         """ Return and pop the first element of the queue """
