@@ -36,10 +36,11 @@ class Vec3:
     
     def __sub__(self, other):
         """ Add two vectors of equal length """
-        if len(other) == len(self):
-            return Vec3(*[self[i]-other[i] for i in range(len(self))])
-        else:
-            return NotImplemented
+        return self + (-other)
+    
+    def __neg__(self):
+        """ Negate a vector """
+        return self*-1
     
     def __mul__(self, other):
         """ Add scalar multiplication to the vector """
