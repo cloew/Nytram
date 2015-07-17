@@ -18,7 +18,7 @@ def main(args):
                                                                            1:[1, 0, 0, 0, 1, 0, 0, 0, 1]})
     entity = Entity(renderer=renderer)
     transform = Transform()
-    transform.entity = entity
+    entity.transform = transform
     transform.rotation = Rotation(inXY=90)
     
     
