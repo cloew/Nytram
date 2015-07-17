@@ -21,6 +21,7 @@ FrameLimiter::FrameLimiter()
 
 	currentFps = 0;
 	frameCount = 0;
+	lastFrameDuration = 0;
 	reportInterval = 3000;
 }
 
@@ -44,7 +45,9 @@ void FrameLimiter::enforceFrameLimit()
     {
         std::this_thread::sleep_for(std::chrono::milliseconds(targetFrameDuration - dt));
     }
-	lastFrameStart = milliseconds_now();
+	now = milliseconds_now();
+	lastFrameDuration = now - lastFrameStart;
+	lastFrameStart = now;
 }
 
 void FrameLimiter::calculateCurrentFps(long now)

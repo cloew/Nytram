@@ -109,6 +109,12 @@ void Shader_AddProgram(GLuint id, GLuint shaderIds[], GLuint size)
 	engine.addShaderProgram(id, vectorOfShaderIds);
 }
 
+// Time
+long Time_SinceLastFrame()
+{
+	return engine.getTimeSinceLastFrame();
+}
+
 // Window
 void Window_SetTitle(const char* title)
 {

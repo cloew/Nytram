@@ -39,4 +39,3 @@ class Entity(object):
         
     def update(self):
         """ Update the entity and its child behaviors """
-        

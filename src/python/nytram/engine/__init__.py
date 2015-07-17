@@ -2,8 +2,10 @@ from ctypes import cdll, c_bool, c_int, CFUNCTYPE
 from .engine_attr import EngineAttr
 from .wrapped_engine_attr import WrappedEngineAttr
 from .engine_callback import EngineCallback
+from .time import Time
 
 CppEngine = cdll.LoadLibrary("Nytram.dll")
+Time = Time(CppEngine)
 
 UpdateCallback = EngineCallback(CFUNCTYPE(None))
 KeyboardCallback = EngineCallback(CFUNCTYPE(None, c_int, c_bool))

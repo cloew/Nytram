@@ -15,6 +15,9 @@ public:
 	void run(Scene& scene);
 	void stop();
 
+	// Frame Limiter
+	long getTimeSinceLastFrame() {return frameLimiter.getTimeSinceLastFrame();};
+
 private:
 	GameWindow* gameWindow;
 	InputHandler* inputHandler;

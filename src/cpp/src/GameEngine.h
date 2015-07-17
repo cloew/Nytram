@@ -45,6 +45,9 @@ public:
 	void setKeyboardCallback(Keyboard_Callback callback) {inputHandler.setKeyboardCallback(callback);}
 	void setMouseButtonCallback(MouseButton_Callback callback) {inputHandler.setMouseButtonCallback(callback);}
 
+	// Time
+	long getTimeSinceLastFrame() {return loop.getTimeSinceLastFrame();}
+
 	// Window
 	void setWindowTitle(const char* title) {gameWindow.setTitle(title);}
 	void setWindowSize(int width, int height) {gameWindow.setSize(width, height);}

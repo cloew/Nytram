@@ -47,6 +47,9 @@ extern "C" {
 	NYTRAM_API void Shader_AddShader(GLuint id, const char* filePath, GLenum shaderType);
 	NYTRAM_API void Shader_AddProgram(GLuint id, GLuint shaderIds[], GLuint size);
 
+	// Time
+	NYTRAM_API long Time_SinceLastFrame();
+
 	// Window
 	NYTRAM_API void Window_SetTitle(const char* title);
 	NYTRAM_API void Window_SetSize(int width, int height);

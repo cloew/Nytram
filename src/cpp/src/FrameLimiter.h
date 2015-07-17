@@ -4,6 +4,9 @@
 #include <chrono>
 #include <thread>
 
+#include <iostream>
+using namespace std;
+
 class FrameLimiter
 {
 public:
@@ -12,11 +15,14 @@ public:
 	void start();
 	void enforceFrameLimit();
 
+	// Getters
 	double getCurrentFps() {return currentFps;}
+	long getTimeSinceLastFrame() {return lastFrameDuration;}
 
 private:
 	float targetFps;
 	long targetFrameDuration;
+	long lastFrameDuration;
 	long now, lastFrameStart, dt;
 
     double currentFps;
