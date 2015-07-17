@@ -13,7 +13,7 @@ class Path:
     def follow(self, speed):
         """ Return a coroutine that will follow this path """
         while self.transform.position != self.destination:
-            distance = self.direction*(Time.sinceLastFrame()/1000.0)
+            distance = self.direction*(speed*Time.sinceLastFrame()/1000.0)
             difference = self.destination - self.transform.position
             
             if distance.magnitude < difference.magnitude:
