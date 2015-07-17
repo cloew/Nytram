@@ -3,14 +3,17 @@ from ..engine import CppEngine, EngineAttr, UpdateCallback
 
 class Entity(object):
     """ Represents an entity in the game engine """
-    nonBehaviorAttrs = ["id", "__updateCallback"]
+    nonBehaviorAttrs = ["id", "_updateCallback", "_updateMethods"]
     renderer = EngineAttr("setRenderer")
     
     def __init__(self, renderer=None, transform=None):
         """ Initialize the Entity """
         self.id = CppEngine.Entity_Add()
-        self.__updateCallback = UpdateCallback(self.update)
-        CppEngine.Entity_SetUpdateCallback(self.id, self.__updateCallback)
+        
+        self._updateMethods = set()
+        self._updateCallback = UpdateCallback(self.update)
+        CppEngine.Entity_SetUpdateCallback(self.id, self._updateCallback)
+        
         self.renderer = renderer
         self.transform = Transform() if transform is None else transform
         
@@ -36,6 +39,10 @@ class Entity(object):
     def setupNewBehavior(self, behavior):
         """ Setup the behavior """
         behavior.entity = self
+        if hasattr(behavior, "update"):
+            self._updateMethods.add(behavior.update)
         
     def update(self):
         """ Update the entity and its child behaviors """
+        for callback in self._updateMethods:
+            callback()
