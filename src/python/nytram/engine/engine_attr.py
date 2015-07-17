@@ -10,7 +10,13 @@ class EngineAttr:
         
     def __get__(self, obj, type=None):
         """ Return this attribute """
-        return self.values[obj] if type is not None else self
+        result = None
+        if type is not None:
+            if obj in self.values:
+                result = self.values[obj]
+        else:
+            result = self
+        return result
         
     def __set__(self, obj, value):
         """ Set this attribute """
