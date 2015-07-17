@@ -4,7 +4,7 @@ from .wrapped_engine_attr import WrappedEngineAttr
 
 CppEngine = cdll.LoadLibrary("Nytram.dll")
 
-GameLoopCallback = CFUNCTYPE(None)
+UpdateCallback = CFUNCTYPE(None)
 KeyboardCallback = CFUNCTYPE(None, c_int, c_bool)
 MouseButtonCallback = CFUNCTYPE(None, c_int, c_bool)
     
