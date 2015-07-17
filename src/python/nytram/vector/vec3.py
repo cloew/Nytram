@@ -21,6 +21,10 @@ class Vec3:
         self._vector[index] = value
         if self.onChange is not None:
             self.onChange()
+    
+    def __mul__(self, other):
+        """ Add scalar multiplication to the vector """
+        return Vec3(*[d*other for d in self._vector])
         
     @property
     def x(self):
