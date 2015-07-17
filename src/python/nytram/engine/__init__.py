@@ -8,7 +8,7 @@ UpdateCallback = CFUNCTYPE(None)
 KeyboardCallback = CFUNCTYPE(None, c_int, c_bool)
 MouseButtonCallback = CFUNCTYPE(None, c_int, c_bool)
     
-def GetCallbackMethod(self, cfunctionPrototype, objectMethod):
+def GetCallbackMethod(cfunctionPrototype, objectMethod):
     def callback(*args):
         objectMethod(*args)
     return cfunctionPrototype(callback)
