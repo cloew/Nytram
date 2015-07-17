@@ -20,4 +20,4 @@ class Camera:
         
     def setProjection(self):
         """ Set the projection in the C++ Engine """
-        self.projection.apply()
+        self.projection.apply(self)
