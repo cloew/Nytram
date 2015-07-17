@@ -1,5 +1,5 @@
 from .events import Keys, MouseButtons
-from ..engine import CppEngine, KeyboardCallback, MouseButtonCallback, GetCallbackMethod
+from ..engine import CppEngine, KeyboardCallback, MouseButtonCallback
 
 from collections import deque
 
@@ -30,10 +30,10 @@ class EventQueue:
     
     def applyCallback(self):
         """ Set the Mouse Button callback """
-        self.buttonCallback = GetCallbackMethod(self, MouseButtonCallback, self.on_mouse_button_pressed)
+        self.buttonCallback = MouseButtonCallback(self.on_mouse_button_pressed)
         CppEngine.Mouse_SetButtonCallback(self.buttonCallback)
         
-        self.keyboardCallback = GetCallbackMethod(self, KeyboardCallback, self.on_key_pressed)
+        self.keyboardCallback = KeyboardCallback(self.on_key_pressed)
         CppEngine.Keyboard_SetCallback(self.keyboardCallback)
     
     def on_key_pressed(self, key, pressed):

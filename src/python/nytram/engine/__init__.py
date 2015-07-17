@@ -1,17 +1,18 @@
 from ctypes import cdll, c_bool, c_int, CFUNCTYPE
 from .engine_attr import EngineAttr
 from .wrapped_engine_attr import WrappedEngineAttr
+from .engine_callback import EngineCallback
 
 CppEngine = cdll.LoadLibrary("Nytram.dll")
 
-UpdateCallback = CFUNCTYPE(None)
-KeyboardCallback = CFUNCTYPE(None, c_int, c_bool)
-MouseButtonCallback = CFUNCTYPE(None, c_int, c_bool)
+UpdateCallback = EngineCallback(CFUNCTYPE(None))
+KeyboardCallback = EngineCallback(CFUNCTYPE(None, c_int, c_bool))
+MouseButtonCallback = EngineCallback(CFUNCTYPE(None, c_int, c_bool))
     
-def GetCallbackMethod(cfunctionPrototype, objectMethod):
-    def callback(*args):
-        objectMethod(*args)
-    return cfunctionPrototype(callback)
+# def GetCallbackMethod(cfunctionPrototype, objectMethod):
+    # def callback(*args):
+        # objectMethod(*args)
+    # return cfunctionPrototype(callback)
     
 def ListToArray(l, ctype):
     """ Convert a List to an Array """
