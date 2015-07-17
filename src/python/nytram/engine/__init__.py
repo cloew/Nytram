@@ -9,11 +9,6 @@ UpdateCallback = EngineCallback(CFUNCTYPE(None))
 KeyboardCallback = EngineCallback(CFUNCTYPE(None, c_int, c_bool))
 MouseButtonCallback = EngineCallback(CFUNCTYPE(None, c_int, c_bool))
     
-# def GetCallbackMethod(cfunctionPrototype, objectMethod):
-    # def callback(*args):
-        # objectMethod(*args)
-    # return cfunctionPrototype(callback)
-    
 def ListToArray(l, ctype):
     """ Convert a List to an Array """
     return (ctype*len(l))(*l), len(l)
