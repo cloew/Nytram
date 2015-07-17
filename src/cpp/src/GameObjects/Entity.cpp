@@ -1,5 +1,13 @@
 #include "Entity.h"
 
+void Entity::start()
+{
+	if (startCallback)
+	{
+		startCallback();
+	}
+}
+
 void Entity::update()
 {
 	if (updateCallback)

@@ -26,6 +26,7 @@ public:
 
 	// Entities
 	GLuint addEntity() {return scene.addEntity();}
+	void setEntityStartCallback(GLuint entityId, Start_Callback startCallback) {scene.getEntity(entityId).setStartCallback(startCallback);}
 	void setEntityUpdateCallback(GLuint entityId, Update_Callback updateCallback) {scene.getEntity(entityId).setUpdateCallback(updateCallback);}
 	void rotateEntityInXY(GLuint entityId, GLfloat angleInDegrees) {scene.getEntity(entityId).rotateInXY(angleInDegrees);}
 	void rotateEntityInYZ(GLuint entityId, GLfloat angleInDegrees) {scene.getEntity(entityId).rotateInYZ(angleInDegrees);}

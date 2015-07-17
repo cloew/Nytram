@@ -9,6 +9,11 @@ GLuint Scene::addEntity()
 void Scene:: initialize()
 {
 	camera.initialize();
+	
+	for (auto &entity : entities)
+	{
+		entity.start();
+	}
 }
 
 void Scene::update()

@@ -12,6 +12,7 @@ using namespace glm;
 extern "C" {
 #endif
 	
+	typedef void (*Start_Callback_fp)();
 	typedef void (*Update_Callback_fp)();
 
 	// Camera
@@ -24,6 +25,7 @@ extern "C" {
 
 	// Entity
 	NYTRAM_API GLuint Entity_Add();
+	NYTRAM_API void Entity_SetStartCallback(GLuint entityId, Start_Callback_fp startCallback);
 	NYTRAM_API void Entity_SetUpdateCallback(GLuint entityId, Update_Callback_fp updateCallback);
 	NYTRAM_API void Entity_RotateInXY(GLuint entityId, GLfloat angleInDegrees);
 	NYTRAM_API void Entity_RotateInYZ(GLuint entityId, GLfloat angleInDegrees);
