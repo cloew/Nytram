@@ -30,7 +30,6 @@ class Rotation:
         
     def setRotationInXYPlane(self):
         """ Set the rotation in the XY plane """
-        print(self.inXY)
         if hasattr(self, "entity"):
             CppEngine.Entity_RotateInXY(self.entity.id, c_float(self.inXY))
             
