@@ -1,6 +1,6 @@
 from kao_decorators import proxy_for
 
-@proxy_for("_vector", ["__iter__", "__len__"])
+@proxy_for("_vector", ["__iter__", "__len__", "__getitem__"])
 class Vec3:
     """ Represents a 3-dimension Vector """
     
@@ -21,6 +21,20 @@ class Vec3:
         self._vector[index] = value
         if self.onChange is not None:
             self.onChange()
+    
+    def __add__(self, other):
+        """ Add two vectors of equal length """
+        if len(other) == len(self):
+            return Vec3(*[self[i]+other[i] for i in range(len(self))])
+        else:
+            return NotImplemented
+    
+    def __sub__(self, other):
+        """ Add two vectors of equal length """
+        if len(other) == len(self):
+            return Vec3(*[self[i]-other[i] for i in range(len(self))])
+        else:
+            return NotImplemented
     
     def __mul__(self, other):
         """ Add scalar multiplication to the vector """
