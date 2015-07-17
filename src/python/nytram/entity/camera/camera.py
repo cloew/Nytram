@@ -13,7 +13,6 @@ class Camera:
         """ Initialize the camera """
         self.eye = Vec3(eye)
         self.projection = projection
-        # self.projection.apply()
         
     def setEye(self, value):
         """ Set the eye in the C++ Engine """
