@@ -1,20 +1,25 @@
 from kao_decorators import proxy_for
 
+import math
+
 @proxy_for("_vector", ["__iter__", "__len__", "__getitem__"])
 class Vec3:
     """ Represents a 3-dimension Vector """
     
     def __init__(self, x, y=0, z=0, onChange=None):
         """ Initialize the vector with each coordinate """
-        self.onChange = onChange
+        self.onChange = None
         if hasattr(x, '__iter__'):
             self.assign(*x)
         else:
             self.assign(x, y, z)
+        self.onChange = onChange
         
     def assign(self, x=0, y=0, z=0):
         """ Assign all the dimensions in the vector """
         self._vector = [x, y, z]
+        if self.onChange is not None:
+            self.onChange()
         
     def setDimension(self, value, index):
         """ Set the given vector index to the value given """
@@ -39,6 +44,21 @@ class Vec3:
     def __mul__(self, other):
         """ Add scalar multiplication to the vector """
         return Vec3(*[d*other for d in self._vector])
+    
+    def __eq__(self, other):
+        """ Compare 2 vectors for equality """
+        return list(self) == list(other)
+        
+    @property
+    def unitVector(self):
+        """ Return a unit vector in the direction of this vector """
+        magnitude = self.magnitude
+        return Vec3(self.x/magnitude, self.y/magnitude, self.z/magnitude)
+        
+    @property
+    def magnitude(self):
+        """ Return the magnitude of the vector """
+        return math.sqrt(self.x**2 + self.y**2 + self.z**2)
         
     @property
     def x(self):
