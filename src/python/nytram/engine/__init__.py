@@ -7,7 +7,7 @@ from .time import Time
 CppEngine = cdll.LoadLibrary("Nytram.dll")
 Time = Time(CppEngine)
 
-UpdateCallback = EngineCallback(CFUNCTYPE(None))
+EntityCallback = EngineCallback(CFUNCTYPE(None))
 KeyboardCallback = EngineCallback(CFUNCTYPE(None, c_int, c_bool))
 MouseButtonCallback = EngineCallback(CFUNCTYPE(None, c_int, c_bool))
     
