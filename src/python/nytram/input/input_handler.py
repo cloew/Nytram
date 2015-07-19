@@ -1,5 +1,6 @@
 from .input_event import InputEvent
-from ..event.events import Keys, MouseButtons
+from .keys import Keys
+from .mouse_buttons import MouseButtons
 from ..engine import CppEngine, KeyboardCallback, MouseButtonCallback
 
 class InputHandler:
