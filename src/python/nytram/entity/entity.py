@@ -8,9 +8,10 @@ class Entity(object):
     behaviorCallbackAttrs = ["start", "update"]
     renderer = EngineAttr("setRenderer")
     
-    def __init__(self, renderer=None, transform=None):
+    def __init__(self, app, renderer=None, transform=None):
         """ Initialize the Entity """
         self.id = CppEngine.Entity_Add()
+        self.app = app
         self.start = BehaviorCallbacks(self.id, CppEngine.Entity_SetStartCallback)
         self.update = BehaviorCallbacks(self.id, CppEngine.Entity_SetUpdateCallback)
         
