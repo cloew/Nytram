@@ -1,4 +1,4 @@
-from ..event.event_queue import Event
+from .input_event import InputEvent
 from ..event.events import Keys, MouseButtons
 from ..engine import CppEngine, KeyboardCallback, MouseButtonCallback
 
@@ -29,7 +29,7 @@ class InputHandler:
         """ Return a engine input callback """
         def onInput(input, pressed):
             if input in self.inputToCallbacks:
-                event = Event(input, pressed, inputType)
+                event = InputEvent(input, pressed, inputType)
                 for callback in self.inputToCallbacks[input]:
                     callback(event)
                 

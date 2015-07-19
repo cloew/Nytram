@@ -1,5 +1,4 @@
 from .engine import CppEngine
-from .event.event_queue import EventQueue
 from .input import InputHandler
 from .mouse import mouse
 from .window import Window
