@@ -1,22 +1,24 @@
 from .engine import CppEngine
 from .event.event_queue import EventQueue
+from .input import InputHandler
 from .mouse import mouse
 from .window import Window
+
+from smart_defaults import smart_defaults, EvenIfNone
 
 class Application:
     """ Represents the current application """
     
-    def __init__(self, window=None):
+    @smart_defaults
+    def __init__(self, inputHandler=EvenIfNone(InputHandler()), window=EvenIfNone(Window())):
         """ Initialize the application """
-        if window is None:
-            window = Window()
+        self.inputHandler = inputHandler
         self.window = window
-        self.eventQueue = EventQueue()
         
     def run(self):
         """ Run the Application """
         self.window.apply()
-        self.eventQueue.applyCallback()
+        self.inputHandler.applyCallbacks()
         return CppEngine.Nytram_Run()
         
     def stop(self):
