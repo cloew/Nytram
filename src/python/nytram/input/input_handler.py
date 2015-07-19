@@ -1,3 +1,4 @@
+from ..event.event_queue import Event
 from ..event.events import Keys, MouseButtons
 from ..engine import CppEngine, KeyboardCallback, MouseButtonCallback
 
@@ -6,7 +7,7 @@ class InputHandler:
     
     def __init__(self):
         """ Initialize the Input Handler """
-        self.inputToEvents = {}
+        self.inputToCallbacks = {}
         self.onKey = self.getEngineInputCallback(Keys)
         self.onMouseButton = self.getEngineInputCallback(MouseButtons)
     
@@ -20,14 +21,16 @@ class InputHandler:
         
     def register(self, input, callback):
         """ Register the given callback for the given Input """
-        if input not in self.inputToEvents:
-            self.inputToEvents[input] = []
-        self.inputToEvents[input].append(callback)
+        if input not in self.inputToCallbacks:
+            self.inputToCallbacks[input] = []
+        self.inputToCallbacks[input].append(callback)
         
     def getEngineInputCallback(self, inputType):
         """ Return a engine input callback """
-        def onInput(self, input, pressed):
-            event = Event(button, pressed, inputType)
-            self.addEvent(event)
-            print(event)
+        def onInput(input, pressed):
+            if input in self.inputToCallbacks:
+                event = Event(input, pressed, inputType)
+                for callback in self.inputToCallbacks[input]:
+                    callback(event)
+                
         return onInput
