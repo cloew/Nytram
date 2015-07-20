@@ -7,5 +7,12 @@ setup(name='nytram',
       author_email='cloew123@gmail.com',
       #url='http://www.python.org/sigs/distutils-sig/',
       packages=['nytram',
-                'nytram.event'],
+                'nytram.engine',
+                'nytram.entity', 'nytram.entity.camera',
+                'nytram.ext',
+                'nytram.input',
+                'nytram.renderers',
+                'nytram.shaders',
+                'nytram.vector',],
+      install_requires=['kao_ext>=0.0.1']
      )
