@@ -24,3 +24,26 @@ def enum(cls):
             return int(name)
     cls.parse = parse
     return cls
+    
+def wrapped_enum(*classes):
+    """ An enum that wraps another set of class enums """
+    def addToCls(cls):
+        @classmethod
+        def tostring(cls, value):
+            for cls in classes:
+                if value in cls.__names:
+                    return cls.__names[value]
+            else:
+                return str(value)
+        cls.tostring = tostring
+
+        @classmethod
+        def parse(cls, name):
+            for cls in classes:
+                if hasattr(cls, name):
+                    return getattr(cls, name)
+            else:
+                return int(name)
+        cls.parse = parse
+        return cls
+    return addToCls
