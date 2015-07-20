@@ -22,6 +22,9 @@ class InputHandler:
         
     def register(self, input, callback):
         """ Register the given callback for the given Input """
+        if input.__class__ is not InputEvent:
+            input = InputEvent(input, pressed=True)
+            
         if input not in self.inputToCallbacks:
             self.inputToCallbacks[input] = []
         self.inputToCallbacks[input].append(callback)
@@ -29,9 +32,9 @@ class InputHandler:
     def getEngineInputCallback(self, inputType):
         """ Return a engine input callback """
         def onInput(input, pressed):
-            if input in self.inputToCallbacks:
-                event = InputEvent(input, pressed, inputType)
-                for callback in self.inputToCallbacks[input]:
+            event = InputEvent(input, pressed, inputType)
+            if event in self.inputToCallbacks:
+                for callback in self.inputToCallbacks[event]:
                     callback(event)
                 
         return onInput
