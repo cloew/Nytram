@@ -1,6 +1,6 @@
-from nytram.enum import enum
+from .input_enum import input_enum
 
-@enum
+@input_enum
 class Keys:
     Unknown         = -1
     Space           = 32

@@ -1,6 +1,6 @@
-from nytram.enum import enum
+from .input_enum import input_enum
 
-@enum
+@input_enum
 class MouseButtons:
     Mouse_Left   = 0
     Mouse_Right  = 1
