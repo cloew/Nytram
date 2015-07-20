@@ -34,7 +34,7 @@ class InputHandler:
     def getEngineInputCallback(self, inputType):
         """ Return a engine input callback """
         def onInput(input, pressed):
-            inputCode = inputType.getCode(input)
+            inputCode = inputType.fromValue(input)
             event = inputCode.getEvent(pressed)
             if event in self.eventToCallbacks:
                 for callback in self.eventToCallbacks[event]:

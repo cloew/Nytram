@@ -3,10 +3,10 @@ from .input_event import InputEvent
 class InputCode:
     """ Represents an InputCode """
     
-    def __init__(self, code):
+    def __init__(self, name, code):
         """ Initialize with the code """
+        self.name = name
         self.code = code
-        self.enum = None # Set by the parent enum object
         
     def getEvent(self, pressed):
         """ Return the proper event """
@@ -28,4 +28,4 @@ class InputCode:
         
     def __repr__(self):
         """ Return the string representation of this code """
-        return self.enum.tostring(self.code)
+        return self.name
