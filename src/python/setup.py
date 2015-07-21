@@ -15,5 +15,6 @@ setup(name='nytram',
                 'nytram.shaders',
                 'nytram.vector',],
       install_requires=['kao_ext>=0.0.1',
-                        'kao_enum>=0.0.1']
+                        'kao_enum>=0.0.1',
+                        'kao_lsitdict>=0.0.1']
      )

@@ -3,12 +3,14 @@ from .keys import Keys
 from .mouse_buttons import MouseButtons
 from ..engine import CppEngine, KeyboardCallback, MouseButtonCallback
 
+from kao_listdict import ListDict
+
 class InputHandler:
     """ Class to handle processing input from the engine """
     
     def __init__(self):
         """ Initialize the Input Handler """
-        self.eventToCallbacks = {}
+        self.eventToCallbacks = ListDict()
         self.onKey = self.getEngineInputCallback(Keys)
         self.onMouseButton = self.getEngineInputCallback(MouseButtons)
     
@@ -27,9 +29,7 @@ class InputHandler:
             events = [input.pressed, input.released]
             
         for event in events:
-            if event not in self.eventToCallbacks:
-                self.eventToCallbacks[event] = []
-            self.eventToCallbacks[event].append(callback)
+            self.eventToCallbacks[event] = callback
         
     def getEngineInputCallback(self, inputType):
         """ Return a engine input callback """
