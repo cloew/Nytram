@@ -9,4 +9,4 @@ class Shader:
         self.filePath = filePath
         self.shaderType = shaderType
         
-        CppEngine.Shader_AddShader(id, filePath.encode("utf-8"), shaderType)
+        CppEngine.Shader_AddShader(id, filePath.encode("utf-8"), shaderType.value)

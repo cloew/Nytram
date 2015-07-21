@@ -1,4 +1,4 @@
-from nytram.enum import enum
+from kao_enum import enum
 
 @enum
 class ShaderTypes:
