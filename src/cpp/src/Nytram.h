@@ -47,6 +47,10 @@ extern "C" {
 	NYTRAM_API void Renderer_AddElementBuffer(GLuint rendererId, GLuint elements[], GLuint size);
 	NYTRAM_API void Renderer_AddVertexBuffer(GLuint rendererId, GLuint shaderAttribute, float vertices[], GLuint size);
 
+	// Scene
+	NYTRAM_API void Scene_SetStartCallback(Start_Callback_fp startCallback);
+	NYTRAM_API void Scene_SetUpdateCallback(Update_Callback_fp updateCallback);
+
 	// Shaders
 	NYTRAM_API void Shader_AddShader(GLuint id, const char* filePath, GLenum shaderType);
 	NYTRAM_API void Shader_AddProgram(GLuint id, GLuint shaderIds[], GLuint size);

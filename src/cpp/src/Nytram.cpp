@@ -103,6 +103,17 @@ void Renderer_AddVertexBuffer(GLuint rendererId, GLuint shaderAttribute, float v
 	engine.addVertexBuffer(rendererId, shaderAttribute, vertices, size);
 }
 
+// Scene
+void Scene_SetStartCallback(Start_Callback_fp startCallback)
+{
+	engine.setSceneStartCallback(startCallback);
+}
+
+void Scene_SetUpdateCallback(Update_Callback_fp updateCallback)
+{
+	engine.setSceneUpdateCallback(updateCallback);
+}
+
 // Shaders
 void Shader_AddShader(GLuint id, const char* filePath, GLenum shaderType)
 {

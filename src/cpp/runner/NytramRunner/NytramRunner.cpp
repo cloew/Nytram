@@ -6,6 +6,11 @@
 
 using namespace std;
 
+void sceneCallback()
+{
+	cout << "In Scene Callback" << endl;
+}
+
 void entityCallback()
 {
 	cout << "In Entity Callback" << endl;
@@ -38,11 +43,11 @@ int _tmain(int argc, _TCHAR* argv[])
 	// Entity
 	GLuint entity1Id = Entity_Add();
 	GLuint renderer1Id = Renderer_Add(1);
-
+	Scene_SetStartCallback(sceneCallback);
 	Entity_AddRenderer(entity1Id, renderer1Id);
 	Entity_SetStartCallback(entity1Id, entityCallback);
 	//Entity_SetUpdateCallback(entity1Id, entityCallback);
-	Loop_AddCallback(loopCallback);
+	//Loop_AddCallback(loopCallback);
 
 	GLuint elements[] =
 	{

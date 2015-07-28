@@ -49,6 +49,10 @@ public:
 	// Loop
 	void addLoopCallback(Loop_Callback callback) {loop.addLoopCallback(callback);}
 
+	// Scene
+	void setSceneStartCallback(Start_Callback startCallback) {scene.setStartCallback(startCallback);}
+	void setSceneUpdateCallback(Update_Callback updateCallback) {scene.setUpdateCallback(updateCallback);}
+
 	// Time
 	long getTimeSinceLastFrame() {return loop.getTimeSinceLastFrame();}
 

@@ -10,6 +10,11 @@ void Scene:: initialize()
 {
 	camera.initialize();
 	
+	if (startCallback)
+	{
+		startCallback();
+	}
+
 	for (auto &entity : entities)
 	{
 		entity.start();
@@ -18,6 +23,11 @@ void Scene:: initialize()
 
 void Scene::update()
 {
+	if (updateCallback)
+	{
+		updateCallback();
+	}
+
 	for (auto &entity : entities)
 	{
 		entity.update();

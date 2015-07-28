@@ -37,6 +37,6 @@ public:
 private:
 	EntityTransform transform;
 	Draw_Callback drawCallback;
-	Update_Callback startCallback;
+	Start_Callback startCallback;
 	Update_Callback updateCallback;
 };
