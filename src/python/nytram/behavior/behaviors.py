@@ -5,12 +5,12 @@ class Behaviors:
     nonBehaviorAttrs = ["parent", "parentAttr", "start", "update"]
     behaviorCallbackAttrs = ["start", "update"]
     
-    def __init__(self, parent, startEngineFn, updateEngineFn, *, parentAttr):
+    def __init__(self, parent, *, parentAttr):
         """ Initialize the Entity """
         self.parent = parent
         self.parentAttr = parentAttr
-        self.start = BehaviorCallbacks(parent.id, startEngineFn)
-        self.update = BehaviorCallbacks(parent.id, updateEngineFn)
+        self.start = BehaviorCallbacks()
+        self.update = BehaviorCallbacks()
         
     def __setattr__(self, name, value):
         """ Set the attr """
