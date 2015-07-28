@@ -8,6 +8,7 @@ class Vec3:
     
     def __init__(self, x, y=0, z=0, onChange=None):
         """ Initialize the vector with each coordinate """
+        self._vector = [0, 0, 0]
         self.onChange = None
         if hasattr(x, '__iter__'):
             self.assign(*x)
@@ -15,9 +16,15 @@ class Vec3:
             self.assign(x, y, z)
         self.onChange = onChange
         
-    def assign(self, x=0, y=0, z=0):
+    def assign(self, x=None, y=None, z=None):
         """ Assign all the dimensions in the vector """
-        self._vector = [x, y, z]
+        if x is not None:
+            self._vector[0] = x
+        if y is not None:
+            self._vector[1] = y
+        if z is not None:
+            self._vector[2] = z
+            
         if self.onChange is not None:
             self.onChange()
         
