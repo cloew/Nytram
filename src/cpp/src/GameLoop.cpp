@@ -14,6 +14,7 @@ void GameLoop::run(Scene& scene)
     {
 		gameWindow->clear();
 		inputHandler->processEvents();
+		performExtraCallbacks();
 		scene.update();
 		scene.draw();
 		gameWindow->swapBuffers();
@@ -25,4 +26,12 @@ void GameLoop::run(Scene& scene)
 void GameLoop::stop()
 {
 	gameWindow->quit();
+}
+
+void GameLoop::performExtraCallbacks()
+{
+	for(auto &callback : loopCallbacks)
+	{
+		callback(getTimeSinceLastFrame());
+	}
 }

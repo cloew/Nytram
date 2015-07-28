@@ -46,6 +46,9 @@ public:
 	void setKeyboardCallback(Keyboard_Callback callback) {inputHandler.setKeyboardCallback(callback);}
 	void setMouseButtonCallback(MouseButton_Callback callback) {inputHandler.setMouseButtonCallback(callback);}
 
+	// Loop
+	void addLoopCallback(Loop_Callback callback) {loop.addLoopCallback(callback);}
+
 	// Time
 	long getTimeSinceLastFrame() {return loop.getTimeSinceLastFrame();}
 

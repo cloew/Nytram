@@ -14,6 +14,7 @@ extern "C" {
 	
 	typedef void (*Start_Callback_fp)();
 	typedef void (*Update_Callback_fp)();
+	typedef void (*Loop_Callback_fp)(long msSinceLastFrame);
 
 	// Camera
 	NYTRAM_API void Camera_SetEye(GLfloat x, GLfloat y, GLfloat z);
@@ -34,11 +35,12 @@ extern "C" {
 	NYTRAM_API void Entity_Translate(GLuint entityId, GLfloat x, GLfloat y, GLfloat z);
 	NYTRAM_API void Entity_AddRenderer(GLuint entityId, GLuint rendererId);
 
-	// Keyboard
+	// Input
 	NYTRAM_API void Keyboard_SetCallback(Keyboard_Callback callback);
-
-	// Mouse
 	NYTRAM_API void Mouse_SetButtonCallback(MouseButton_Callback callback);
+
+	// Loop
+	NYTRAM_API void Loop_AddCallback(Loop_Callback_fp callback);
 
 	// Renderers
 	NYTRAM_API GLuint Renderer_Add(GLuint shaderProgramId);

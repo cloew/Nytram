@@ -11,6 +11,11 @@ void entityCallback()
 	cout << "In Entity Callback" << endl;
 }
 
+void loopCallback(long msSinceLastFrame)
+{
+	cout << "In Loop Callback: " << msSinceLastFrame << endl;
+}
+
 void keyboardCallback(int key, bool pressed)
 {
 	cout << "Key: " << key << " was pressed: " << pressed << endl;
@@ -37,6 +42,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	Entity_AddRenderer(entity1Id, renderer1Id);
 	Entity_SetStartCallback(entity1Id, entityCallback);
 	//Entity_SetUpdateCallback(entity1Id, entityCallback);
+	Loop_AddCallback(loopCallback);
 
 	GLuint elements[] =
 	{

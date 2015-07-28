@@ -70,16 +70,21 @@ void Entity_AddRenderer(GLuint entityId, GLuint rendererId)
 	engine.addRendererToEntity(entityId, rendererId);
 }
 
-// Keyboard
+// Input
 void Keyboard_SetCallback(Keyboard_Callback callback)
 {
 	engine.setKeyboardCallback(callback);
 }
 
-// Mouse
 void Mouse_SetButtonCallback(MouseButton_Callback callback)
 {
 	engine.setMouseButtonCallback(callback);
+}
+
+// Loop
+void Loop_AddCallback(Loop_Callback_fp callback)
+{
+	engine.addLoopCallback(callback);
 }
 
 // Renderers
