@@ -8,7 +8,7 @@ NytramEngine = cdll.LoadLibrary("Nytram.dll")
 Time = Time(NytramEngine)
 
 EntityCallback = EngineCallback(CFUNCTYPE(None))
-LoopCallback = EngineCallback(CFUNCTYPE(c_long))
+LoopCallback = EngineCallback(CFUNCTYPE(None, c_long))
 KeyboardCallback = EngineCallback(CFUNCTYPE(None, c_int, c_bool))
 MouseButtonCallback = EngineCallback(CFUNCTYPE(None, c_int, c_bool))
     
