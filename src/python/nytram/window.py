@@ -1,4 +1,4 @@
-from .engine import CppEngine
+from .engine import NytramEngine
 
 class Window:
     """ Represents the application window """
@@ -11,5 +11,5 @@ class Window:
         
     def apply(self):
         """ Apply the Window parameters to the actual window """
-        CppEngine.Window_SetSize(self.width, self.height)
-        CppEngine.Window_SetTitle(self.title.encode("utf-8"))
+        NytramEngine.Window_SetSize(self.width, self.height)
+        NytramEngine.Window_SetTitle(self.title.encode("utf-8"))

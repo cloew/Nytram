@@ -1,5 +1,5 @@
 from .shader_vertex_data import ShaderVertexData
-from ..engine import CppEngine, ListToArray, EngineAttr
+from ..engine import NytramEngine, ListToArray, EngineAttr
 from ctypes import c_uint
 
 class EntityRenderer:
@@ -8,7 +8,7 @@ class EntityRenderer:
     
     def __init__(self, shaderProgram, elements=[], vertexData={}):
         """ Initialize the Entity Renderer """
-        self.id = CppEngine.Renderer_Add(shaderProgram.id)
+        self.id = NytramEngine.Renderer_Add(shaderProgram.id)
         self.elements = elements
         self.__vertexData = ShaderVertexData(self.id)
         self.vertexData = vertexData
@@ -16,7 +16,7 @@ class EntityRenderer:
     def apply(self):
         """ Apply the Renderer in the C++ Engine """
         if self.entity is not None:
-            CppEngine.Entity_AddRenderer(self.entity.id, self.id)
+            NytramEngine.Entity_AddRenderer(self.entity.id, self.id)
         
     @property
     def elements(self):
@@ -28,7 +28,7 @@ class EntityRenderer:
         """ Set the elements """
         self.__elements = value
         if len(value) > 0:
-            CppEngine.Renderer_AddElementBuffer(self.id, *ListToArray(self.__elements, c_uint))
+            NytramEngine.Renderer_AddElementBuffer(self.id, *ListToArray(self.__elements, c_uint))
         
     @property
     def vertexData(self):

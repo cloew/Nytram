@@ -1,4 +1,4 @@
-from .engine import CppEngine
+from .engine import NytramEngine
 from .input import InputHandler
 from .mouse import mouse
 from .window import Window
@@ -18,8 +18,8 @@ class Application:
         """ Run the Application """
         self.window.apply()
         self.inputHandler.applyCallbacks()
-        return CppEngine.Nytram_Run()
+        return NytramEngine.Nytram_Run()
         
     def stop(self):
         """ Stop the application """
-        CppEngine.Nytram_Stop()
+        NytramEngine.Nytram_Stop()

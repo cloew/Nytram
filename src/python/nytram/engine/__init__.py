@@ -4,8 +4,8 @@ from .wrapped_engine_attr import WrappedEngineAttr
 from .engine_callback import EngineCallback
 from .time import Time
 
-CppEngine = cdll.LoadLibrary("Nytram.dll")
-Time = Time(CppEngine)
+NytramEngine = cdll.LoadLibrary("Nytram.dll")
+Time = Time(NytramEngine)
 
 EntityCallback = EngineCallback(CFUNCTYPE(None))
 LoopCallback = EngineCallback(CFUNCTYPE(c_long))

@@ -1,4 +1,4 @@
-from nytram.engine import CppEngine, EngineAttr
+from nytram.engine import NytramEngine, EngineAttr
 from ctypes import c_float
 from copy import deepcopy
 
@@ -31,17 +31,17 @@ class Rotation:
     def setRotationInXYPlane(self):
         """ Set the rotation in the XY plane """
         if hasattr(self, "entity"):
-            CppEngine.Entity_RotateInXY(self.entity.id, c_float(self.inXY))
+            NytramEngine.Entity_RotateInXY(self.entity.id, c_float(self.inXY))
             
     def setRotationInXZPlane(self):
         """ Set the rotation in the XZ plane """
         if hasattr(self, "entity"):
-            CppEngine.Entity_RotateInXZ(self.entity.id, c_float(self.inXZ))
+            NytramEngine.Entity_RotateInXZ(self.entity.id, c_float(self.inXZ))
             
     def setRotationInYZPlane(self):
         """ Set the rotation in the YZ plane """
         if hasattr(self, "entity"):
-            CppEngine.Entity_RotateInYZ(self.entity.id, c_float(self.inYZ))
+            NytramEngine.Entity_RotateInYZ(self.entity.id, c_float(self.inYZ))
             
     def __copy__(self):
         """ Return a shallow copy of this Rotation """

@@ -1,4 +1,4 @@
-from ..engine import CppEngine, ListToArray
+from ..engine import NytramEngine, ListToArray
 from ctypes import c_float
 
 from kao_decorators import proxy_for
@@ -20,4 +20,4 @@ class ShaderVertexData:
     def __setitem__(self, key, value):
         """ Return the requested attribute """
         self.attrToData[key] = value
-        CppEngine.Renderer_AddVertexBuffer(self.rendererId, key, *ListToArray(value, c_float))
+        NytramEngine.Renderer_AddVertexBuffer(self.rendererId, key, *ListToArray(value, c_float))

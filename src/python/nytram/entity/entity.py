@@ -1,6 +1,6 @@
 from .transform import Transform
 from ..behavior import Behaviors
-from ..engine import CppEngine
+from ..engine import NytramEngine
 
 class Entity(object):
     """ Represents an entity in the game engine """
@@ -8,11 +8,11 @@ class Entity(object):
     
     def __init__(self, scene, renderer=None, transform=None):
         """ Initialize the Entity """
-        self.id = CppEngine.Entity_Add()
+        self.id = NytramEngine.Entity_Add()
         self.scene = scene
         self.behaviors = Behaviors(self, parentAttr="entity")
-        CppEngine.Entity_SetStartCallback(self.id, self.behaviors.start.engineCallback)
-        CppEngine.Entity_SetUpdateCallback(self.id, self.behaviors.update.engineCallback)
+        NytramEngine.Entity_SetStartCallback(self.id, self.behaviors.start.engineCallback)
+        NytramEngine.Entity_SetUpdateCallback(self.id, self.behaviors.update.engineCallback)
         
         self.renderer = renderer
         self.transform = Transform() if transform is None else transform

@@ -1,6 +1,6 @@
 from .ortho_projection import OrthoProjection
 
-from nytram.engine import CppEngine, VectorToArguments, EngineAttr, WrappedEngineAttr
+from nytram.engine import NytramEngine, VectorToArguments, EngineAttr, WrappedEngineAttr
 from nytram.vector import Vec3
 from ctypes import c_float
 
@@ -16,7 +16,7 @@ class Camera:
         
     def setEye(self):
         """ Set the eye in the C++ Engine """
-        CppEngine.Camera_SetEye(*VectorToArguments(self.eye, c_float))
+        NytramEngine.Camera_SetEye(*VectorToArguments(self.eye, c_float))
         
     def setProjection(self):
         """ Set the projection in the C++ Engine """

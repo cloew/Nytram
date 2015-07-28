@@ -1,6 +1,6 @@
 from .rotation import Rotation
 
-from nytram.engine import CppEngine, VectorToArguments, EngineAttr, WrappedEngineAttr
+from nytram.engine import NytramEngine, VectorToArguments, EngineAttr, WrappedEngineAttr
 from nytram.vector import Vec3
 from ctypes import c_float
 
@@ -29,12 +29,12 @@ class Transform:
     def setPosition(self):
         """ Set the position for this entity in the C++ engine """
         if self.entity is not None:
-            CppEngine.Entity_Translate(self.entity.id, *VectorToArguments(self.position, c_float))
+            NytramEngine.Entity_Translate(self.entity.id, *VectorToArguments(self.position, c_float))
         
     def setScale(self):
         """ Set the scale for this entity in the C++ engine """
         if self.entity is not None:
-            CppEngine.Entity_Scale(self.entity.id, *VectorToArguments(self.scale, c_float))
+            NytramEngine.Entity_Scale(self.entity.id, *VectorToArguments(self.scale, c_float))
         
     def setRotation(self):
         """ Set the rotation for this entity in the C++ engine """

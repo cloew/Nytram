@@ -1,5 +1,5 @@
 from ..behavior import Behaviors
-from ..engine import CppEngine
+from ..engine import NytramEngine
 
 class Scene(object):
     """ Represents a scene to render in the game engine """
@@ -9,8 +9,8 @@ class Scene(object):
         """ Initialize the scene with the app """
         self.app = app
         self.behaviors = Behaviors(self, parentAttr="scene")
-        CppEngine.Scene_SetStartCallback(self.behaviors.start.engineCallback)
-        CppEngine.Scene_SetUpdateCallback(self.behaviors.update.engineCallback)
+        NytramEngine.Scene_SetStartCallback(self.behaviors.start.engineCallback)
+        NytramEngine.Scene_SetUpdateCallback(self.behaviors.update.engineCallback)
             
     def __getattr__(self, name):
         """ Return the requested attr """

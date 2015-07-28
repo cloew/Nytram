@@ -1,7 +1,7 @@
 from .input_event import InputEvent
 from .keys import Keys
 from .mouse_buttons import MouseButtons
-from ..engine import CppEngine, KeyboardCallback, MouseButtonCallback
+from ..engine import NytramEngine, KeyboardCallback, MouseButtonCallback
 
 from kao_listdict import ListDict
 
@@ -17,10 +17,10 @@ class InputHandler:
     def applyCallbacks(self):
         """ Apply the input callbacks for the mouse and keyboard """
         self.buttonCallback = MouseButtonCallback(self.onMouseButton)
-        CppEngine.Mouse_SetButtonCallback(self.buttonCallback)
+        NytramEngine.Mouse_SetButtonCallback(self.buttonCallback)
         
         self.keyboardCallback = KeyboardCallback(self.onKey)
-        CppEngine.Keyboard_SetCallback(self.keyboardCallback)
+        NytramEngine.Keyboard_SetCallback(self.keyboardCallback)
         
     def register(self, input, callback):
         """ Register the given callback for the given Input """

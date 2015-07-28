@@ -1,4 +1,4 @@
-from nytram.engine import CppEngine, EngineAttr
+from nytram.engine import NytramEngine, EngineAttr
 from ctypes import c_float
 
 class OrthoProjection:
@@ -23,4 +23,4 @@ class OrthoProjection:
     def setProjection(self):
         """ Set the active projection in the C++ Engine """
         if hasattr(self, "camera") and None not in [self.width, self.height, self.nearClip, self.farClip]:
-            CppEngine.Camera_SetProjection(c_float(self.width), c_float(self.height), c_float(self.nearClip), c_float(self.farClip))
+            NytramEngine.Camera_SetProjection(c_float(self.width), c_float(self.height), c_float(self.nearClip), c_float(self.farClip))
