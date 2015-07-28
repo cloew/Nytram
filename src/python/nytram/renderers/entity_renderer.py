@@ -1,9 +1,10 @@
 from .shader_vertex_data import ShaderVertexData
-from ..engine import CppEngine, ListToArray
+from ..engine import CppEngine, ListToArray, EngineAttr
 from ctypes import c_uint
 
 class EntityRenderer:
     """ Represents a method for rendering an entity using supplied vertex lists """
+    entity = EngineAttr("apply")
     
     def __init__(self, shaderProgram, elements=[], vertexData={}):
         """ Initialize the Entity Renderer """
@@ -11,6 +12,11 @@ class EntityRenderer:
         self.elements = elements
         self.__vertexData = ShaderVertexData(self.id)
         self.vertexData = vertexData
+        
+    def apply(self):
+        """ Apply the Renderer in the C++ Engine """
+        if self.entity is not None:
+            CppEngine.Entity_AddRenderer(self.entity.id, self.id)
         
     @property
     def elements(self):
